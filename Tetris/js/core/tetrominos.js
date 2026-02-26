@@ -1,3 +1,5 @@
+export { createPiece };
+
 function createPiece(type) {
     if (type === 'I') {
         return [

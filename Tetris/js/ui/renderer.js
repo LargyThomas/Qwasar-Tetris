@@ -1,4 +1,5 @@
-import { canvas, arena, player, colors } from '../data/config.js';
+import { canvas, context, arena, player, colors } from '../data/config.js';
+export { draw, drawMatrix };
 
 function drawMatrix(matrix, offset) {
     matrix.forEach((row, y) => {

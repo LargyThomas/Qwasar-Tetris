@@ -1,5 +1,7 @@
 import { arena, player } from '../data/config.js';
 
+export { createMatrix, merge, collide, arenaSweep };
+
 function createMatrix(w, h) {
     const matrix = [];
     while (h--) {
