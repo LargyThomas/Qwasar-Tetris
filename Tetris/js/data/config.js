@@ -5,10 +5,6 @@ export const context = canvas.getContext('2d');
 
 context.scale(20, 20);
 
-export let dropCounter = 0;
-export let dropInterval = 1000;
-export let lastTime = 0;
-
 export const colors = [
     null,
     '#FF0D72',
