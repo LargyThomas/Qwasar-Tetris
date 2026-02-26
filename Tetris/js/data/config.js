@@ -5,15 +5,16 @@ export const context = canvas.getContext('2d');
 
 context.scale(20, 20);
 
-export const colors = [
+export const keys_colors = [
     null,
-    '#FF0D72',
-    '#0DC2FF',
-    '#0DFF72',
-    '#F538FF',
-    '#FF8E0D',
-    '#FFE138',
-    '#3877FF',
+    '#00FFFF',
+    '#FFFF00',
+    '#800080',
+    '#008000',
+    '#FF0000',
+    '#FFA500',
+    '#0000FF',
+    '#fff'
 ];
 
 export const arena = createMatrix(12, 20);
@@ -22,4 +23,6 @@ export const player = {
     pos: {x: 0, y: 0},
     matrix: null,
     score: 0,
+    level: 1,
+    coins : 0,
 };

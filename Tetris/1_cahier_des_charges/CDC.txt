@@ -14,12 +14,12 @@ Faire une bonne architecture de projets diviser en plusieurs fichiers les obliga
 
 Toutes les idées : 
 
-Faire une fonction qui gère les couleurs en fonction des Tetriminos
 Touche e et r à faire pour respectivement mettre en pause et reset la partie à 0 -> Créer les fonction gameReset() et gamePause()
 Quand tu fais pause tu as 2 boutons l'un en dessous de l'autre, le premier "Continuer" et le second "Menu"
 Soundeffect à faire déjà juste les sons (seront inchangeables) quand tu tournes un pièces / quand une ligne disparait / au level up / au game over
 Améliorer UI -> Regarder Canva (Penser à intégrer des boutons de retours sur le mode de jeu / paramètres / Musique)
 Système de level --> Gérer la définition des levels  : quand tu lvl up ? combien du gagne de pièces ? 
+Dans le mode Sprint il y aura un chrono
 Display de Game Over avec 2 boutons l'un en dessous de l'autre, le premier "Restart" et le second "Menu"
 Penser à intégrer les frames que t'auras crées dans le jeu pour le personnage 
 Plusieurs intéraction pourront être faite avec celui-ci -> quand il y a un dépop de ligne / un level up : Félicitation / quand il y a la loose : Se moque si le score c'est de la merde sinon : Dommage 
@@ -32,6 +32,25 @@ Quand tu lances le serveur l'utilisateur tombe sur un menu ou tu auras 3 boutons
 Si tu vas dans "Mode de Jeu" sa te mets une nouvelle fenêtre où tu peux cliquer sur 3 modes : Marathon / Sprint / Classique 
 Si tu vas dans "Paramètres" sa te mets une nouvelle fenêtre où tu vas pouvoir changer les touches 
 Si tu vas dans "Musique" sa te mets une nouvelle fenêtre où tu vas pouvoir gérer ta bibliothèque de musique en ajoutant / supprimant tes musiques 
+ 
+
+Question :
+
+Est ce que je fais un sytème de sauvegarde ? SI j'en fais un comment gérer ça : est ce que la partie sera sauvegarder dans un pannel de sauvegarde de partie ou est ce que la sauvegarde reprendra quand tu cliqueras sur le mode que
+tu auras choisi et si ya pas de partie ça en start une nouvelle ?
+
+Le système de sauvegarde ce portera aussi sur les touches ? 
+
+Est ce qu'on ferais pas un utilisateur qui pourra se log afin d'avoir accès à son compte ?
+
+Faire un système de meilleur score sur les différents mode de jeu. ---> Créer une db pour avoir tous les utilisateurs connecter ---> Avoir un serveur ou une db ? C'est quoi la diff ?
+
+
+
+
+En cours de création : 
+
+
 
 
 

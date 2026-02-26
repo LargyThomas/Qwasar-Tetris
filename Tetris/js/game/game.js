@@ -9,18 +9,19 @@ import { default_keys } from '../data/keybidings.js';
 export { playerDrop, playerMove, playerReset, playerRotate, gameReset, pauseGame, update };
 
 let dropCounter = 0;
-let dropInterval = 1000;
+let dropInterval = Math.round(1000 / Math.pow(player.level, 0.3));
 let lastTime = 0;
 
 function playerReset() {
     const pieces = 'TJLOSZI';
     player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
     player.pos.y = 0;
-    player.pos.x = (arena[0].length / 2 | 0) -
-                   (player.matrix[0].length / 2 | 0);
+    player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
     if (collide(arena, player)) {
         arena.forEach(row => row.fill(0));
         player.score = 0;
+        player.level = 1;
+        player.coins = 0;
         updateScore();
     }
 }

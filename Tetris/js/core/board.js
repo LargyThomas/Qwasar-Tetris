@@ -1,4 +1,5 @@
 import { arena, player } from '../data/config.js';
+import { createLevels } from '../game/level.js';
 
 export { createMatrix, merge, collide, arenaSweep };
 
@@ -36,6 +37,7 @@ function collide(arena, player) {
 }
 
 function arenaSweep() {
+    let rowCountLevel = 1;
     let rowCount = 1;
     outer: for (let y = arena.length -1; y > 0; --y) {
         for (let x = 0; x < arena[y].length; ++x) {
@@ -50,5 +52,9 @@ function arenaSweep() {
 
         player.score += rowCount * 10;
         rowCount *= 2;
+
+        createLevels();
+        player.coins += rowCount * 5;
+        
     }
 }
