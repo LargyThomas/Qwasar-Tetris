@@ -5,7 +5,6 @@ import { rotate } from '../core/physics.js';
 import { draw } from '../ui/renderer.js';
 import { updateScore } from './scoring.js';
 
-
 export { playerDrop, playerMove, playerReset, playerRotate, gameReset, pauseGame, update };
 
 
