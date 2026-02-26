@@ -1,0 +1,98 @@
+Pour plus tard :
+
+Mode de jeu   : Marathon avec 42 niveaux à réaliser / Sprint faire le maximum de point avec des pièces qui spawn + rapidement et + de vitesse / Classique avec 15 niveaux et 3 palliers 0 -> 5 ; 5 -> 10 ; 10 -> 15
+
+Idée à part   : Rajouter un gus sur le côté qui te suit durant ta partie : quand tu fais une ligne / lvl up --> Félicitation / quand tu loose --> Se moque / Fais le compte à rebours pour lancement 3,2,1,GO et après une pause READY ?, GO
+
+Création d'une boutique où tu pourras acheter des "skins" grâce à de l'argent récoltés tous les tant de niveau -> à définir
+ -> Gérer le stockage des pièces / Combien t'en gagne / ...
+ -> Gérer la potentielle boutique
+
+
+Faire une bonne architecture de projets diviser en plusieurs fichiers les obligatoires sont : index.html / style.css / tetris.js
+
+
+Toutes les idées : 
+
+Faire une fonction qui gère les couleurs en fonction des Tetriminos
+Touche e et r à faire pour respectivement mettre en pause et reset la partie à 0 -> Créer les fonction gameReset() et gamePause()
+Quand tu fais pause tu as 2 boutons l'un en dessous de l'autre, le premier "Continuer" et le second "Menu"
+Soundeffect à faire déjà juste les sons (seront inchangeables) quand tu tournes un pièces / quand une ligne disparait / au level up / au game over
+Améliorer UI -> Regarder Canva (Penser à intégrer des boutons de retours sur le mode de jeu / paramètres / Musique)
+Système de level --> Gérer la définition des levels  : quand tu lvl up ? combien du gagne de pièces ? 
+Display de Game Over avec 2 boutons l'un en dessous de l'autre, le premier "Restart" et le second "Menu"
+Penser à intégrer les frames que t'auras crées dans le jeu pour le personnage 
+Plusieurs intéraction pourront être faite avec celui-ci -> quand il y a un dépop de ligne / un level up : Félicitation / quand il y a la loose : Se moque si le score c'est de la merde sinon : Dommage 
+Quand le jeu start il fera un décompte : 3, 2, 1, GO 
+Quand le jeu reprend après une mise en pause : Ready ? GO
+La bibliothèque de musique aura une capacité de stockage de 20 musiques maximum, elle pourra en contenir moins mais pas plus.
+Pour la musique il y aura 5 musique déjà fourni de base, un starter pack.
+L'utilisateur pourra gérer sa bibliothèque. Il y aura 2 boutons un '+' et un '-' : le '+' -> importer de lui même ses musiques sous format jsp quoi / le '-' -> supprimer une musique quand elle est sélectionner
+Quand tu lances le serveur l'utilisateur tombe sur un menu ou tu auras 3 boutons : "Mode de Jeu" / "Paramètres" / "Musique"
+Si tu vas dans "Mode de Jeu" sa te mets une nouvelle fenêtre où tu peux cliquer sur 3 modes : Marathon / Sprint / Classique 
+Si tu vas dans "Paramètres" sa te mets une nouvelle fenêtre où tu vas pouvoir changer les touches 
+Si tu vas dans "Musique" sa te mets une nouvelle fenêtre où tu vas pouvoir gérer ta bibliothèque de musique en ajoutant / supprimant tes musiques 
+
+
+
+tetris/
+│
+├── index.html                  # Point d'entrée unique
+│
+├── assets/
+│   ├── audio/
+│   │   ├── sfx/
+│   │   │   ├── rotate.mp3
+│   │   │   ├── line-clear.mp3
+│   │   │   ├── level-up.mp3
+│   │   │   └── game-over.mp3
+│   │   └── music/
+│   │       ├── track1.mp3      # Les 5 musiques du starter pack
+│   │       ├── track2.mp3
+│   │       └── ...
+│   │
+│   ├── sprites/
+│   │   └── character/
+│   │       ├── idle.png
+│   │       ├── celebrate.png
+│   │       ├── mock.mp3
+│   │       └── ...             # Toutes tes frames de personnage
+│   │
+│   └── fonts/                  # Si tu utilises des polices custom
+│
+├── css/
+│   ├── style.css               # Styles globaux + variables CSS
+│   ├── menu.css                # Styles du menu principal
+│   ├── game.css                # Styles de l'espace jeu
+│   └── screens.css             # Styles pause / game-over / modes
+│
+└── js/
+    ├── main.js                 # Point d'entrée JS — initialise tout
+    │
+    ├── core/
+    │   ├── board.js            # La grille, collision, lignes
+    │   ├── tetrominos.js       # Définition des 7 pièces + couleurs + rotations
+    │   └── physics.js          # Gravité, vitesse, niveaux
+    │
+    ├── game/
+    │   ├── game.js             # Boucle principale, états du jeu
+    │   ├── scoring.js          # Score, lignes, level up
+    │   └── modes/
+    │       ├── marathon.js     # 42 niveaux
+    │       ├── sprint.js       # Vitesse max, score max
+    │       └── classic.js      # 15 niveaux, 3 paliers
+    │
+    ├── ui/
+    │   ├── renderer.js         # Dessine le board sur le canvas
+    │   ├── screens.js          # Gère les transitions entre écrans
+    │   ├── hud.js              # Score / niveau / lignes en jeu
+    │   └── character.js        # Animations du personnage
+    │
+    ├── systems/
+    │   ├── input.js            # Gestion clavier + remapping des touches
+    │   ├── audio.js            # Sons + bibliothèque musicale
+    │   └── storage.js          # localStorage : skins, musiques, scores
+    │
+    └── data/
+        ├── config.js           # Constantes globales (vitesse, couleurs, niveaux...)
+        └── keybindings.js      # Touches par défaut
