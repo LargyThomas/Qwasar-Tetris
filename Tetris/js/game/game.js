@@ -1,6 +1,42 @@
 import { arena, player } from '../data/config.js';
 import { createPiece } from '../core/tetrominos.js';
-import { collide, merge, arenaSweep } from '../core/board.js';
+import { collide, merge } from '../core/board.js';
+import { createLevels, updateLevel, levels } from './level.js';
+import { updateCoins } from './coins.js';
+
+let levelsInitialized = false;
+
+export function arenaSweep() {
+    if (!levelsInitialized) {
+        createLevels();
+        levelsInitialized = true;
+    }
+    let rowCount = 1;
+    outer: for (let y = arena.length -1; y > 0; --y) {
+        for (let x = 0; x < arena[y].length; ++x) {
+            if (arena[y][x] === 0) {
+                continue outer;
+            }
+        }
+
+        const row = arena.splice(y, 1)[0].fill(0);
+        arena.unshift(row);
+        ++y;
+
+        player.score += rowCount * 10;
+        rowCount *= 2;
+    }
+
+    // Gestion du level up et des coins
+    let nextLevel = player.level + 1;
+    while (levels[nextLevel] && player.score >= levels[nextLevel].points) {
+        player.level = nextLevel;
+        player.coins += levels[nextLevel].coins;
+        nextLevel++;
+    }
+    updateLevel();
+    updateCoins();
+}
 import { rotate } from '../core/physics.js';
 import { draw } from '../ui/renderer.js';
 import { showPauseScreen, showGameOverScreen, setupScreenButtons } from '../ui/screens.js';
