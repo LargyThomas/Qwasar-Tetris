@@ -1,6 +1,4 @@
-export { rotate };
-
-function rotate(matrix, dir) {
+export function rotate(matrix, dir) {
     for (let y = 0; y < matrix.length; ++y) {
         for (let x = 0; x < y; ++x) {
             [

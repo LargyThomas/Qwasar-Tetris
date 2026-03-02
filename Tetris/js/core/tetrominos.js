@@ -1,6 +1,4 @@
-export { createPiece };
-
-function createPiece(type) {
+export function createPiece(type) {
     if (type === 'I') {
         return [
             [0, 1, 0, 0],

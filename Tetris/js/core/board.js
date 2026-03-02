@@ -1,9 +1,8 @@
 import { arena, player } from '../data/config.js';
-import { createLevels } from '../game/level.js';
+import { createLevels, updateLevel, levels } from '../game/level.js';
+import { updateCoins } from '../game/coins.js';
 
-export { createMatrix, merge, collide, arenaSweep };
-
-function createMatrix(w, h) {
+export function createMatrix(w, h) {
     const matrix = [];
     while (h--) {
         matrix.push(new Array(w).fill(0));
@@ -11,7 +10,7 @@ function createMatrix(w, h) {
     return matrix;
 }
 
-function merge(arena, player) {
+export function merge(arena, player) {
     player.matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
@@ -21,23 +20,27 @@ function merge(arena, player) {
     });
 }
 
-function collide(arena, player) {
+export function collide(arena, player) {
     const m = player.matrix;
     const o = player.pos;
     for (let y = 0; y < m.length; ++y) {
         for (let x = 0; x < m[y].length; ++x) {
-            if (m[y][x] !== 0 &&
-               (arena[y + o.y] &&
-                arena[y + o.y][x + o.x]) !== 0) {
-                return true;
+            if (m[y][x] !== 0) {
+                if (!arena[y + o.y] || arena[y + o.y][x + o.x] !== 0) {
+                    return true;
+                }
             }
         }
     }
     return false;
 }
 
-function arenaSweep() {
-    let rowCountLevel = 1;
+let levelsInitialized = false;
+export function arenaSweep() {
+    if (!levelsInitialized) {
+        createLevels();
+        levelsInitialized = true;
+    }
     let rowCount = 1;
     outer: for (let y = arena.length -1; y > 0; --y) {
         for (let x = 0; x < arena[y].length; ++x) {
@@ -52,9 +55,15 @@ function arenaSweep() {
 
         player.score += rowCount * 10;
         rowCount *= 2;
-
-        createLevels();
-        player.coins += rowCount * 5;
-        
     }
+
+    // Gestion du level up et des coins
+    let nextLevel = player.level + 1;
+    while (levels[nextLevel] && player.score >= levels[nextLevel].points) {
+        player.level = nextLevel;
+        player.coins += levels[nextLevel].coins;
+        nextLevel++;
+    }
+    updateLevel();
+    updateCoins();
 }

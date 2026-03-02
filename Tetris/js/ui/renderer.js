@@ -1,8 +1,6 @@
 import { canvas, context, arena, player, keys_colors } from '../data/config.js';
 
-export { draw, drawMatrix };
-
-function drawMatrix(matrix, offset) {
+export function drawMatrix(matrix, offset) {
     matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
@@ -13,7 +11,7 @@ function drawMatrix(matrix, offset) {
     });
 }
 
-function draw() {
+export function draw() {
     context.fillStyle = '#fff';
     context.fillRect(0, 0, canvas.width / 20, canvas.height / 20);
 

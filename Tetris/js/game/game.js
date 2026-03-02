@@ -3,30 +3,30 @@ import { createPiece } from '../core/tetrominos.js';
 import { collide, merge, arenaSweep } from '../core/board.js';
 import { rotate } from '../core/physics.js';
 import { draw } from '../ui/renderer.js';
+import { showPauseScreen, showGameOverScreen, setupScreenButtons } from '../ui/screens.js';
 import { updateScore } from './scoring.js';
-import { default_keys } from '../data/keybidings.js';
-
-export { playerDrop, playerMove, playerReset, playerRotate, gameReset, pauseGame, update };
+import { default_keys } from '../data/keybindings.js';
 
 let dropCounter = 0;
 let dropInterval = Math.round(1000 / Math.pow(player.level, 0.3));
 let lastTime = 0;
 
-function playerReset() {
+export function playerReset() {
     const pieces = 'TJLOSZI';
     player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
     player.pos.y = 0;
     player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
     if (collide(arena, player)) {
-        arena.forEach(row => row.fill(0));
-        player.score = 0;
-        player.level = 1;
-        player.coins = 0;
-        updateScore();
+        isGameOver = true;
+        showGameOverScreen(true);
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
     }
 }
 
-function playerDrop() {
+export function playerDrop() {
     player.pos.y++;
     if (collide(arena, player)) {
         player.pos.y--;
@@ -38,14 +38,14 @@ function playerDrop() {
     dropCounter = 0;
 }
 
-function playerMove(offset) {
+export function playerMove(offset) {
     player.pos.x += offset;
     if (collide(arena, player)) {
         player.pos.x -= offset;
     }
 }
 
-function playerRotate(dir) {
+export function playerRotate(dir) {
     const pos = player.pos.x;
     let offset = 1;
     rotate(player.matrix, dir);
@@ -60,15 +60,67 @@ function playerRotate(dir) {
     }
 }
 
-function gameReset() {
 
+let isPaused = false;
+let isGameOver = false;
+let animationId = null;
+
+setupScreenButtons({
+    onContinue: () => {
+        pauseGame();
+        showPauseScreen(false);
+    },
+    onMenu: () => {
+        window.location.reload();
+    },
+    onRestart: () => {
+        showGameOverScreen(false);
+        gameReset();
+    }
+});
+
+export function gameReset() {
+    arena.forEach(row => row.fill(0));
+    player.score = 0;
+    player.level = 1;
+    player.coins = 0;
+    isPaused = false;
+    isGameOver = false;
+    dropCounter = 0;
+    dropInterval = Math.round(1000 / Math.pow(player.level, 0.3));
+    lastTime = 0;
+    playerReset();
+    updateScore();
+    showPauseScreen(false);
+    showGameOverScreen(false);
+    if (!animationId) {
+        update();
+    }
 }
 
-function pauseGame() {
-
+export function pauseGame() {
+    isPaused = !isPaused;
+    if (isPaused) {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+        showPauseScreen(true);
+    } else {
+        showPauseScreen(false);
+        update();
+    }
 }
 
-function update(time = 0) {
+export function update(time = 0) {
+    if (isPaused) {
+        showPauseScreen(true);
+        return;
+    }
+    if (isGameOver) {
+        showGameOverScreen(true);
+        return;
+    }
     const deltaTime = time - lastTime;
 
     dropCounter += deltaTime;
@@ -77,7 +129,6 @@ function update(time = 0) {
     }
 
     lastTime = time;
-    
     draw();
-    requestAnimationFrame(update);
+    animationId = requestAnimationFrame(update);
 }

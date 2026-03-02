@@ -5,14 +5,31 @@
     <meta name="keywords" content="tetris, game, jeu" />
     <link rel="stylesheet" href="css/game.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/screens.css" />
     <title>Tetris</title>
   </head>
 
   <body>
-    <div id="score"></div>
-    <div id="level"></div>
-    <div id="coins"></div>
+    <div class="hud-bar">
+      <div id="score" class="hud-item"></div>
+      <div id="level" class="hud-item"></div>
+      <div id="coins" class="hud-item"></div>
+    </div>
     <canvas id="tetris" width="240" height="400"></canvas>
+    <div id="pause-screen">
+      <div class="screen-modal">
+        <h2>Pause</h2>
+        <button id="continue-btn" class="screen-btn">Continuer</button>
+        <button id="menu-btn" class="screen-btn">Menu</button>
+      </div>
+    </div>
+    <div id="gameover-screen">
+      <div class="screen-modal">
+        <h2>Game Over</h2>
+        <button id="restart-btn" class="screen-btn">Restart</button>
+        <button id="menu-btn2" class="screen-btn">Menu</button>
+      </div>
+    </div>
     <script type="module" src="js/main.js"></script>
   </body>
 
