@@ -86,7 +86,7 @@ tetris/
 │   └── screens.css             # Styles pause / game-over / modes
 │
 └── js/
-    ├── main.js                 # Point d'entrée JS — initialise tout
+    ├── my_tetris.js                 # Point d'entrée JS — initialise tout
     │
     ├── core/
     │   ├── board.js            # La grille, collision, lignes
