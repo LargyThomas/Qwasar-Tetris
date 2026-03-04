@@ -4,64 +4,11 @@
     voir sur Claude pour les couleurs précises et les codes hexadécimales.  
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
-
-:root {
-    --font-title: 'Orbitron', monospace;
-    --font-ui:    'Share Tech Mono', monospace;
-}
-
-body {
-    background-color: #0A0A12;
-    padding: 30px;
-}
-
-.hud-bar {
-    color: #E8E8F0;
-    font-family: var(--font-title);
-    font-size: 1.5em;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.hud-item {
-    flex: 1;
-    text-align: center;
-    margin: 0;
-}
-
-#mute-btn {
-    background: white;
-    clip-path: circle(50%);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    flex-shrink: 0;
-}
-
-#mute-btn img {
-    width: 60px;
-    height: 60px;
-}
-
-.menu-message {
-    color: #7A7A9A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-ui);
-    font-size: 1.2em;
-}
-
 .menu-perso {
     width: 400px;
     height: 500px;
     background-color: aliceblue;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
@@ -84,21 +31,25 @@ body {
 }
 
 .menu-buttons {
-    background-color: #BD00FF;
-    color: #E8E8F0;
+    background-color: var(--color-accent);
+    color: var(--color-text);
     border: none;
     height: 75px;
-    width : 40%;
+    width: 40%;
     min-width: 200px;
-    margin-left: auto;
     text-align: center;
     font-family: var(--font-title);
     font-size: 1.5em;
     cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.menu-buttons:hover {
+    opacity: 0.85;
 }
 
 footer {
-    color: #7A7A9A;
+    color: var(--color-muted);
     position: fixed;
     padding: 10px;
     bottom: 0;
@@ -114,8 +65,8 @@ footer {
 }
 
 .footer-button {
-    background-color: #3A3A5A;
-    color: #E8E8F0;
+    background-color: var(--color-dark);
+    color: var(--color-text);
     border: none;
     height: 50px;
     width: 200px;
@@ -124,4 +75,68 @@ footer {
     font-family: var(--font-title);
     font-size: 1.2em;
     cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.footer-button:hover {
+    opacity: 0.85;
+}
+
+.game-modes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+}
+
+.mode {
+    width: 400px;
+    height: 500px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: var(--bg);
+    font-family: var(--font-title);
+    font-size: 1.2em;
+}
+
+.mode:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(189, 0, 255, 0.3);
+}
+
+.parameters {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+}
+
+.container-left,
+.container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.touch {
+    width: 400px;
+    height: 20px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    color: var(--bg);
+    font-family: var(--font-ui);
 }

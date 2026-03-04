@@ -1,16 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --font-title:   'Orbitron', monospace;
+    --font-ui:      'Share Tech Mono', monospace;
+
+    --bg:           #0A0A12;
+    --color-text:   #E8E8F0;
+    --color-muted:  #7A7A9A;
+    --color-accent: #BD00FF;
+    --color-dark:   #3A3A5A;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background: #202028;
-    color: #fff;
-    font-family: sans-serif;
-    font-size: 2em;
-    text-align: center;
-    overflow-x: hidden;
+    background-color: var(--bg);
+    color: var(--color-text);
+    padding: 30px;
+    font-family: var(--font-ui);
+}
+
+.screen {
+    display: none;
+}
+.screen.active {
+    display: block;
 }
 
 .hud-bar {
-    color: #fff;
-    font-family: sans-serif;
-    font-size: 1em;
+    color: var(--color-text);
+    font-family: var(--font-title);
+    font-size: 1.5em;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -23,7 +47,10 @@ body {
     margin: 0;
 }
 
-#mute-btn {
+#mute-btn,
+#mute-btn-modes,
+#mute-btn-params,
+#mute-btn-music {
     background: white;
     clip-path: circle(50%);
     border: none;
@@ -33,13 +60,47 @@ body {
     flex-shrink: 0;
 }
 
-#mute-btn img {
-    width: 40px;
-    height: 40px;
+#mute-btn img,
+#mute-btn-modes img,
+#mute-btn-params img,
+#mute-btn-music img {
+    width: 60px;
+    height: 60px;
 }
 
-keyboard {
+.return-menu {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 1em;
+    padding: 50px;
+    cursor: pointer;
+}
+
+.return-button {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    padding: 20px;
+    border: none;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.return-button:hover {
+    opacity: 0.85;
+}
+
+.menu-message {
+    color: var(--color-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-ui);
+    font-size: 1.2em;
+    gap: 10px;
+    margin-bottom: 20px;
 }
