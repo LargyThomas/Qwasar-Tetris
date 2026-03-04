@@ -25,7 +25,7 @@
         </div>
     </body>
     <footer>
-        <button id="credits-btn" class="footer-button">Crédits</button>
+        <button onclick="redirectCredits()" id="credits-btn" class="footer-button">Crédits</button>
         <p class="footer-text">© 2026 Tetris. Tous droits réservés.</p>
     </footer>
     <script src="js/systems/audio.js"></script>
@@ -38,6 +38,9 @@
         }
         function redirectMusic() {
             window.location.href = 'music.html';
+        }
+        function redirectCredits() {
+            window.location.href = 'credits.html';
         }
     </script>
 </html>
