@@ -16,6 +16,10 @@
       <div id="coins" class="hud-item"></div>
     </div>
     <canvas id="tetris" width="240" height="400"></canvas>
+    <audio id="music" src="assets/sfx/rotate.mp3"></audio>
+    <audio id="line-clear" src="assets/sfx/line_clear.mp3"></audio>
+    <audio id="game-over" src="assets/sfx/game_over.mp3"></audio>
+    <audio id="level-up" src="assets/sfx/level_up.mp3"></audio>
     <div id="pause-screen">
       <div class="screen-modal">
         <h2>Pause</h2>
@@ -31,6 +35,7 @@
       </div>
     </div>
     <script type="module" src="js/my_tetris.js"></script>
+    <script src="js/systems/audio.js"></script>
   </body>
 
 </html>

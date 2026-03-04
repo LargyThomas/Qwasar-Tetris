@@ -46,6 +46,7 @@ Est ce qu'on ferais pas un utilisateur qui pourra se log afin d'avoir accès à 
 Faire un système de meilleur score sur les différents mode de jeu. ---> Créer une db pour avoir tous les utilisateurs connecter ---> Avoir un serveur ou une db ? C'est quoi la diff ?
 
 
+IMPORTANT : TOUTES LES MUSIQUES / SONS SONT TÉLÉCHARGÉES DANS LEURS DOSSIERS RESPECTIFS
 
 
 En cours de création : 

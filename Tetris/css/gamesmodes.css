@@ -12,9 +12,32 @@ body {
 
 .hud-bar {
     color: #E8E8F0;
-    text-align: center;
     font-family: var(--font-title);
     font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hud-item {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+#mute-btn {
+    background: white;
+    clip-path: circle(50%);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-shrink: 0;
+}
+
+#mute-btn img {
+    width: 60px;
+    height: 60px;
 }
 
 .game-modes {
@@ -37,29 +60,20 @@ body {
     padding: 50px;
 }
 
-footer {
-    color: #7A7A9A;
-    position: fixed;
-    padding: 10px;
-    bottom: 0;
-    width: 100%;
-    font-family: var(--font-ui);
-    font-size: 0.9em;
-    text-align: center;
-}
-
-.footer-text {
+.return-menu {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    cursor: pointer;
 }
 
-.footer-button {
-    background-color: #3A3A5A;
+.return-button {
+    background-color: #BD00FF;
     color: #E8E8F0;
+    padding: 20px;
     border: none;
-    height: 50px;
-    width: 200px;
-    margin: 10px;
     text-align: center;
     font-family: var(--font-title);
     font-size: 1.2em;

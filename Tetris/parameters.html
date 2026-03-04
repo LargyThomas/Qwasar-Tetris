@@ -26,9 +26,14 @@
                 <div class="touch">Mode 6</div>
             </div>
         </div>
+        <div class="return-menu">
+            <button onclick="redirectMenu()" id="return-btn" class="return-button">Retour au menu</button>
+        </div>
     </body>
-    <footer>
-        <button id="credits-btn" class="footer-button">Crédits</button>
-        <p class="footer-text">© 2026 Tetris. Tous droits réservés.</p>
-    </footer>
+    <script>
+        function redirectMenu() {
+            window.location.href = 'menu.html';
+        }
+    </script>
+    <script src="js/systems/audio.js"></script>
 </html>

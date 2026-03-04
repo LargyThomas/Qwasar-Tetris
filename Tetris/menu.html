@@ -7,6 +7,7 @@
         <title>Menu - Tetris</title>
     </head>
     <body>
+        <audio id="music" src="assets/audio/music/default_track.mp3" autoplay></audio>
         <div class="hud-bar">
             <h1 class="hud-item">Tetris</h1>
         </div>
@@ -27,6 +28,7 @@
         <button id="credits-btn" class="footer-button">Crédits</button>
         <p class="footer-text">© 2026 Tetris. Tous droits réservés.</p>
     </footer>
+    <script src="js/systems/audio.js"></script>
     <script>
         function redirectModes() {
             window.location.href = 'games_modes.html';
