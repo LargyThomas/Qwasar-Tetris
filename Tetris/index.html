@@ -49,11 +49,19 @@
           <img id="mute-icon-modes" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
         </button>
       </div>
-      <!-- Lorsqu'on passera la souris sur les modes, la description s'affiche. Quand on clique → on accède au mode de jeu sélectionné -->
       <div class="game-modes">
-        <div class="mode" onclick="startGame('classic')">Mode Classique</div>
-        <div class="mode" onclick="startGame('sprint')">Mode Sprint</div>
-        <div class="mode" onclick="startGame('zen')">Mode Zen</div>
+        <div class="mode" onclick="startGame('classic')">
+          <h3 class="mode-title">Mode Classique</h3>
+          <p class="mode-description">Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
+        </div>
+        <div class="mode" onclick="startGame('sprint')">
+          <h3 class="mode-title">Mode Sprint</h3>
+          <p class="mode-description">Jouez contre la montre pour un temps limité et obtenez le meilleur score possible.</p>
+        </div>
+        <div class="mode" onclick="startGame('marathon')">
+          <h3 class="mode-title">Mode Marathon</h3>
+          <p class="mode-description">Survivez le plus longtemps possible en complétant des lignes sans fin.</p>
+        </div>
       </div>
       <div class="return-menu">
         <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
@@ -98,15 +106,26 @@
       </div>
       <div class="parameters">
         <div class="container-left">
-          <div class="touch">Touche 1</div>
-          <div class="touch">Touche 2</div>
-          <div class="touch">Touche 3</div>
+          <div onclick="ChangeTouch('down')" class="touch">Descendre</div>
+          <div onclick="ChangeTouch('left')" class="touch">Gauche</div>
+          <div onclick="ChangeTouch('right')" class="touch">Droite</div>
         </div>
         <div class="container-right">
-          <div class="touch">Touche 4</div>
-          <div class="touch">Touche 5</div>
-          <div class="touch">Touche 6</div>
+          <div onclick="ChangeTouch('rotate')" class="touch">Rotation</div>
+          <div onclick="ChangeTouch('pause')" class="touch">Pause</div>
+          <div onclick="ChangeTouch('reset')" class="touch">Reset</div>
         </div>
+      </div>
+      <div class="dialog-screen">
+          <!-- Le but est de faire une case dialogue ou il y aura un titre, une case cliquable où 
+            l'utilisateur pourra assigner une touche à une action (la description sera en fond de case) 
+            et enfin un bouton pour valider et fermer. -->
+          <form>
+            <label for="key-input" class="boite-description">ugfdhig</label>
+            <input type="text" id="key-input" class="key-input" value="" placeholder="Entrer une touche...">
+          </form>
+          <button class="validate-button">Valider</button>
+          <button class="cancel-button">Annuler</button>
       </div>
       <div class="return-menu">
         <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>

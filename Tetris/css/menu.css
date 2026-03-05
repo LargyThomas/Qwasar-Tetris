@@ -1,7 +1,7 @@
 /*
     Une palette de couleurs cyberpunk un peu sombre, avec des touches de néon pour les éléments interactifs.
 
-    voir sur Claude pour les couleurs précises et les codes hexadécimales.  
+    voir sur Claude pour les couleurs précises et les codes hexadécimaux.  
 */
 
 .menu-perso {
@@ -46,6 +46,58 @@
 
 .menu-buttons:hover {
     opacity: 0.85;
+}
+
+.dialog-screen {
+    background-color: whitesmoke;
+    border: 2px solid blue;
+    border-radius: 8px;
+    width: 450px;
+    height: 100px;
+    position: absolute;
+    padding: 10px;
+    gap: 10px;
+}
+
+.boite-description {
+    font: bold 1.2em var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.key-input {
+    border: 2px solid #333;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: var(--font-ui);
+}
+
+.validate-button,
+.cancel-button {
+    width: 140px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: #3a3a3a;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: var(--font-ui);
+    display: inline-block;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.validate-button:hover,
+.cancel-button:hover {
+    background: #555;
 }
 
 footer {
@@ -93,24 +145,51 @@ footer {
 
 .mode {
     width: 400px;
-    height: 500px;
-    background-color: aliceblue;
+    height: 600px;
+    background-color: red;
+    position: relative;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     padding: 50px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    color: var(--bg);
-    font-family: var(--font-title);
-    font-size: 1.2em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
-.mode:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(189, 0, 255, 0.3);
+.mode-title {
+    position: absolute;
+    bottom: 24px;
+    text-align: center;
+    font: bold 1.5em var(--font-title);
+    transition: opacity 0.3s ease;
 }
 
+.mode-description {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.85);
+    color: var(--color-text);
+    border-radius: 0 0 8px 8px;
+    transition: bottom 0.3s ease;
+}
+
+.mode:hover{
+    background-color: var(--color-accent);
+}
+
+.mode:hover .mode-description {
+    bottom: 0;
+}
+
+.mode:hover .mode-title {
+    opacity: 0;
+}
 .parameters {
     background-color: aliceblue;
     display: flex;
@@ -133,10 +212,12 @@ footer {
     width: 400px;
     height: 20px;
     background-color: yellow;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px;
     color: var(--bg);
-    font-family: var(--font-ui);
+    font: bold 1.2em var(--font-title);
+    cursor: pointer;
 }
