@@ -48,51 +48,47 @@
     opacity: 0.85;
 }
 
-.dialog-screen {
-    background-color: whitesmoke;
-    border: 2px solid blue;
-    border-radius: 8px;
-    width: 450px;
-    height: 100px;
-    position: absolute;
-    padding: 10px;
-    gap: 10px;
-}
-
 .boite-description {
-    font: bold 1.2em var(--bg);
+    font: bold 1.2em var(--font-title);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 400px;
+    height: 100px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 
 .key-input {
-    border: 2px solid #333;
-    border-radius: 4px;
+    background-color: beige;
+    border: none;
+    height: 40px;
+    width: 300px;
     text-align: center;
-    font-size: 1.2em;
-    font-family: var(--font-ui);
+    font-family: var(--font-title);
+    font-size: 1.1em;
+    cursor: text;
+    transition: opacity 0.2s;
+    left: 20%;
+    transform: translateX(20%);
 }
 
 .validate-button,
 .cancel-button {
-    width: 140px;
-    padding: 10px 0;
-    border: none;
-    border-radius: 8px;
     background: #3a3a3a;
     color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
     font-size: 1.1em;
     cursor: pointer;
     transition: background 0.2s;
     font-family: var(--font-ui);
     display: inline-block;
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 150px;
+    height: 40px;
 }
 
 .validate-button:hover,

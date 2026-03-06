@@ -106,26 +106,28 @@
       </div>
       <div class="parameters">
         <div class="container-left">
-          <div onclick="ChangeTouch('down')" class="touch">Descendre</div>
-          <div onclick="ChangeTouch('left')" class="touch">Gauche</div>
-          <div onclick="ChangeTouch('right')" class="touch">Droite</div>
+          <div onclick="showScreen('dialog-screen')" class="touch">Descendre</div>
+          <div onclick="showScreen('dialog-screen')" class="touch">Gauche</div>
+          <div onclick="showScreen('dialog-screen')" class="touch">Droite</div>
         </div>
         <div class="container-right">
-          <div onclick="ChangeTouch('rotate')" class="touch">Rotation</div>
-          <div onclick="ChangeTouch('pause')" class="touch">Pause</div>
-          <div onclick="ChangeTouch('reset')" class="touch">Reset</div>
+          <div onclick="showScreen('dialog-screen')" class="touch">Rotation</div>
+          <div onclick="showScreen('dialog-screen')" class="touch">Pause</div>
+          <div onclick="showScreen('dialog-screen')" class="touch">Reset</div>
         </div>
       </div>
-      <div class="dialog-screen">
+      <div id="dialog-screen" class="case-screen">
           <!-- Le but est de faire une case dialogue ou il y aura un titre, une case cliquable où 
             l'utilisateur pourra assigner une touche à une action (la description sera en fond de case) 
             et enfin un bouton pour valider et fermer. -->
           <form>
-            <label for="key-input" class="boite-description">ugfdhig</label>
+            <label class="boite-description">Paramètres des Touches</label>
             <input type="text" id="key-input" class="key-input" value="" placeholder="Entrer une touche...">
           </form>
-          <button class="validate-button">Valider</button>
-          <button class="cancel-button">Annuler</button>
+          <div class="container-button">
+            <button id="validate-btn" class="validate-button">Valider</button>
+            <button id="cancel-btn" class="cancel-button">Annuler</button>
+          </div>
       </div>
       <div class="return-menu">
         <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
@@ -153,9 +155,9 @@
       </div>
       <div class="menu-message">
         <h2>Crédits</h2>
-        <p>Développé par [Votre Nom]</p>
+        <p>Développé par Thomas</p>
         <p>Artworks par [Nom de l'artiste]</p>
-        <p>Sons par [Nom du compositeur]</p>
+        <p>Sons par Freesound</p>
       </div>
       <div class="return-menu">
         <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>

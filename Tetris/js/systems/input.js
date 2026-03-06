@@ -1,18 +1,58 @@
-/*
+import { default_keys } from '../data/keybindings.js';
 
-Créer soit mêmes ses boîtes de dialogue pour les paramètres des touches, quand on cliquera sur
-une case de la grille des touches, une boîte de dialogue s'affichera pour nous demander d'appuyer
-sur la touche que l'on souhaite assigner à cette action. 
+// écouter les touches qui sont mise puis les channger avec change touch
+// fermer le dialogue après avoir cliqué sur validé ou annuler 
 
-Voici les étapes à suivre pour implémenter cette fonctionnalité :
+function handleKeyPress(event) {
+    const gameKeys = [
+        default_keys.moveLeft,
+        default_keys.moveRight,
+        default_keys.softDrop,
+        default_keys.rotate,
+        default_keys.reset,
+        default_keys.pause
+    ];
+    if (gameKeys.includes(event.key)) {
+        event.preventDefault();
+        changeTouch(currentAction, event.key);
+        closeDialog();
+    }
+}
 
-1. Ajouter un gestionnaire d'événements de clic à chaque élément de la grille des touches.
-2. Lorsqu'un élément est cliqué, afficher une boîte de dialogue personnalisée demandant à l'utilisateur d'appuyer sur une touche.
-3. Capturer l'événement de pression de touche et récupérer la touche appuyée.
-4. Mettre à jour la configuration des touches avec la nouvelle assignation. html + keybidings.js
-5. Fermer la boîte de dialogue.
+let currentAction = null;
 
-*/
+export function openKeyBindingDialog(action) {
+    currentAction = action;
+    const dialog = document.getElementById('dialog-screen');
+    dialog.classList.add('active');
+    document.addEventListener('keydown', handleKeyPress);
+}
 
-function ChangeTouch(action) {
+export function closeDialog() {
+    const dialog = document.getElementById('dialog-screen');
+    dialog.classList.remove('active');
+    document.removeEventListener('keydown', handleKeyPress);
+}
+
+export function changeTouch(action, key) {
+    switch (action) {
+        case 'moveLeft':
+            default_keys.moveLeft = key;
+            break;
+        case 'moveRight':
+            default_keys.moveRight = key;
+            break;
+        case 'softDrop':
+            default_keys.softDrop = key;
+            break;
+        case 'rotate':
+            default_keys.rotate = key;
+            break;
+        case 'reset':
+            default_keys.reset = key;
+            break;
+        case 'pause':
+            default_keys.pause = key;
+            break;
+    }
 }
