@@ -22,3 +22,14 @@ export function setupScreenButtons({onContinue, onMenu, onRestart}) {
 	if (restartBtn && onRestart) restartBtn.onclick = onRestart;
 	if (menuBtn2 && onMenu) menuBtn2.onclick = onMenu;
 }
+
+export function showLoadBarScreen() {
+	const loadBarScreen = document.getElementById('loadbar-screen');
+	if (loadBarScreen) {
+		loadBarScreen.style.display = 'flex';
+		setTimeout(() => {
+			loadBarScreen.style.display = 'none';
+			showScreen('menu-screen');
+		}, 5000);
+	}
+}

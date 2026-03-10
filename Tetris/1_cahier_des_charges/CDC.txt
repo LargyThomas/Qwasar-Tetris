@@ -12,6 +12,19 @@ Création d'une boutique où tu pourras acheter des "skins" grâce à de l'argen
 Faire une bonne architecture de projets diviser en plusieurs fichiers les obligatoires sont : index.html / style.css / tetris.js
 
 
+EXPLICATION : 
+
+BIEN PARLER DES CLAQUES ET PRBLM AVEC MUSIQUES DIFFérentes pages
+
+
+
+IDÉE IMPORTANTE :
+
+Tu lances ça va faire la barre de loading, essayer de faire un titre Tetris qui glicth pour devenir bien visible quand c'est à 100%
+quand c'est à 100% sa te fais un WELCOME TO TETRIS (un peu comme osu) + essayer de trouver comment faire une sorte d'animation pour 
+faire une transition vers le menu.
+
+
 Toutes les idées : 
 
 Touche e et r à faire pour respectivement mettre en pause et reset la partie à 0 -> Créer les fonction gameReset() et gamePause()
