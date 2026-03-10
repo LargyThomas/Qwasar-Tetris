@@ -32,6 +32,8 @@ body {
 }
 
 .hud-bar {
+    flex-direction: row;
+    justify-content: center;
     color: var(--color-text);
     font-family: var(--font-title);
     font-size: 1.5em;
@@ -42,9 +44,16 @@ body {
 }
 
 .hud-item {
-    flex: 1;
-    text-align: center;
-    margin: 0;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff,
+        0 0 80px #0ff,
+        0 0 90px #0ff;
+    animation: flicker 2s infinite;
 }
 
 #mute-btn,
@@ -73,24 +82,30 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: 0px;
     cursor: pointer;
 }
 
 .return-button {
-    background-color: var(--color-accent);
-    color: var(--color-text);
-    padding: 20px;
-    border: none;
-    text-align: center;
-    font-family: var(--font-title);
-    font-size: 1.2em;
     cursor: pointer;
-    transition: opacity 0.2s;
+    padding: 18px 36px;
+    font-family: var(--font-title);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px solid #00ffff;
+    background: rgba(0, 255, 255, .05);
+    overflow: hidden;
+    transition: background .3s, box-shadow .3s;
 }
 
 .return-button:hover {
-    opacity: 0.85;
+  background: rgba(0, 255, 255, .1);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, .3),
+    inset 0 0 20px rgba(0, 255, 255, .05);
 }
 
 .menu-message {
@@ -103,4 +118,23 @@ body {
     font-size: 1.2em;
     gap: 10px;
     margin-bottom: 20px;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #0ff,
+      0 0 80px #0ff;
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+    text-shadow:
+      0 0 2px #0ff,
+      0 0 4px #0ff,
+      0 0 10px #0ff;
+  }
 }

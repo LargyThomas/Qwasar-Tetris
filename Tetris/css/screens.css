@@ -32,7 +32,7 @@ Si on a plusieurs éléments avec la classe "screen-btn", vous pouvez les stylis
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
+    padding: 2px;
     gap: 10px;
     display: grid;
     grid-template-columns: 1fr;
