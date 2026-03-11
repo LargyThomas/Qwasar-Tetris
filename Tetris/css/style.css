@@ -1,15 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
 
-:root {
-    --font-title:   'Orbitron', monospace;
-    --font-ui:      'Share Tech Mono', monospace;
-
-    --bg:           #0A0A12;
-    --color-text:   #E8E8F0;
-    --color-muted:  #7A7A9A;
-    --color-accent: #BD00FF;
-    --color-dark:   #3A3A5A;
-}
+@import url('parameters.css');
+@import url('gamemode.css');
 
 *, *::before, *::after {
     box-sizing: border-box;

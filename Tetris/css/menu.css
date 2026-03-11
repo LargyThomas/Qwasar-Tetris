@@ -1,63 +1,63 @@
 /*
-    Une palette de couleurs cyberpunk un peu sombre, avec des touches de néon pour 
-    les éléments interactifs.
+	Une palette de couleurs cyberpunk un peu sombre, avec des touches de néon pour 
+	les éléments interactifs.
 */
 
 .menu-perso {
-    width: 400px;
-    height: 500px;
-    background-color: aliceblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-left: 200px;
-    float: left;
+	width: 400px;
+	height: 500px;
+	background-color: aliceblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	margin-left: 200px;
+	float: left;
 }
 
 .character {
-    width: 200px;
-    height: 200px;
+	width: 200px;
+	height: 200px;
 }
 
 .menu-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 600px;
-    justify-content: center;
-    gap: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 600px;
+	justify-content: center;
+	gap: 30px;
 }
 
 .menu-buttons {
-    cursor: pointer;
-    padding: 18px 36px;
-    font-family: var(--font-title);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #fff;
-    border: 2px solid #00ffff;
-    background: rgba(0, 255, 255, .05);
-    overflow: hidden;
-    transition: background .3s, box-shadow .3s;
+	cursor: pointer;
+	padding: 18px 36px;
+	font-family: var(--font-title);
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #fff;
+	border: 2px solid #00ffff;
+	background: rgba(0, 255, 255, .05);
+	overflow: hidden;
+	transition: background .3s, box-shadow .3s;
 }
 
 .menu-buttons:hover {
-  background: rgba(0, 255, 255, .1);
-  box-shadow:
-    0 0 20px rgba(0, 255, 255, .3),
-    inset 0 0 20px rgba(0, 255, 255, .05);
+	background: rgba(0, 255, 255, .1);
+	box-shadow:
+		0 0 20px rgba(0, 255, 255, .3),
+		inset 0 0 20px rgba(0, 255, 255, .05);
 }
 
 .boite-description {
-    font: bold 1.2em var(--font-title);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    width: 400px;
-    height: 100px;
+	font: bold 1.2em var(--font-title);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	width: 400px;
+	height: 100px;
     padding: 40px;
     display: flex;
     flex-direction: column;

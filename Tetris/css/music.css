@@ -1,62 +1,62 @@
 #music-screen {
-    padding-bottom: 80px;
+	padding-bottom: 80px;
 }
 
 .container-menu {
-    max-width: 900px;
-    margin: 0 auto;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    background: rgba(0, 255, 255, 0.02);
+	max-width: 900px;
+	margin: 0 auto;
+	border: 1px solid rgba(0, 255, 255, 0.2);
+	background: rgba(0, 255, 255, 0.02);
 }
 
 .librairy-bar {
-    padding: 14px 24px;
-    border-bottom: 1px solid rgba(0, 255, 255, 0.15);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    position: relative;
+	padding: 14px 24px;
+	border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	position: relative;
 }
 
 .librairy-bar::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 30%;
-    height: 1px;
-    background: linear-gradient(90deg, var(--cyan, #00ffff), transparent);
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 30%;
+	height: 1px;
+	background: linear-gradient(90deg, var(--cyan, #00ffff), transparent);
 }
 
 .librairy-bar h2 {
-    font-family: var(--font-title);
-    font-size: 0.75em;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #00ffff;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+	font-family: var(--font-title);
+	font-size: 0.75em;
+	font-weight: 700;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: #00ffff;
+	text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
 }
 
 .container-body {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    padding: 20px;
+	display: flex;
+	flex-direction: row;
+	gap: 24px;
+	padding: 20px;
 }
 
 .container-song {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-height: 300px;
-    max-height: 420px;
-    overflow-y: auto;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	min-height: 300px;
+	max-height: 420px;
+	overflow-y: auto;
 }
 
 .container-song::-webkit-scrollbar {
-    width: 3px;
+	width: 3px;
 }
 .container-song::-webkit-scrollbar-track {
     background: transparent;

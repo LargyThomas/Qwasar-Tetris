@@ -1,11 +1,11 @@
 /*
-Un point désigne une classe tandis que le dièse désigne un id.
-Un id doit être unique dans une page, tandis qu'une classe peut être utilisée pour plusieurs éléments.
-Par exemple, si on a un élément avec l'id "pause-screen", vous pouvez le styliser en CSS avec "#pause-screen".
-Si on a plusieurs éléments avec la classe "screen-btn", vous pouvez les styliser avec ".screen-btn".
+    Un point désigne une classe tandis que le dièse désigne un id.
+    Un id doit être unique dans une page, tandis qu'une classe peut être utilisée pour plusieurs éléments.
+    Par exemple, si on a un élément avec l'id "pause-screen", vous pouvez le styliser en CSS avec "#pause-screen".
+    Si on a plusieurs éléments avec la classe "screen-btn", vous pouvez les styliser avec ".screen-btn".
 
-# --> une personne
-. --> une équipe
+    # --> une personne
+    . --> une équipe
 */
 
 #pause-screen,
