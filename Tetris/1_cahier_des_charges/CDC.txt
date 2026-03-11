@@ -64,8 +64,17 @@ IMPORTANT : TOUTES LES MUSIQUES / SONS SONT TÉLÉCHARGÉES DANS LEURS DOSSIERS 
 
 En cours de création : 
 
-Pour les sons comment ont va faire si le joueur à de la musique ? je pense que le musique faudra la mettre un certain niv si possible et
-les sons les mettre pue plus fort --> jsp ccomment et si c possible
+Pour mes cards structures ex html
+
+<div class="mode mode-classic" data-num="01">
+    <div class="mode-content">
+        <div class="mode-tag">// classique</div>
+        <div class="mode-title">Mode Classique</div>
+    </div>
+    <div class="mode-description">
+       <p>Textes</p>
+    </div>
+</div>
 
 
 
