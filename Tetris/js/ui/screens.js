@@ -30,6 +30,6 @@ export function showLoadBarScreen() {
 		setTimeout(() => {
 			loadBarScreen.style.display = 'none';
 			showScreen('menu-screen');
-		}, 5000);
+		}, 5300);
 	}
 }

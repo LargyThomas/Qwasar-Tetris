@@ -17,14 +17,21 @@ body{
   height:100%;
 }
 
+#loadbar-screen{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .glitch{
     font-family: --var(--font-title);
     text-transform: uppercase;
     font-size: 20rem;
-    margin-top: 10%;
     animation: glitch 1s linear infinite;
     display: flex;
     justify-content: center;
+    margin-top: 10rem;
 }
 
 @keyframes glitch{
@@ -80,10 +87,10 @@ body{
 
 .loadbar-container{
   display:flex;
-  height:50vh;
-  flex:1;
-  align-items:center;
-  justify-content:center;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+  margin-top: 10rem;
 }
 
 #loader{

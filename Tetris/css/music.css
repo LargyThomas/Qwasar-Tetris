@@ -1,0 +1,74 @@
+.container-menu {
+    border: 2px solid white;
+}
+
+.container-body {
+    border: 2px solid red;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    padding: 10px;
+}
+
+.container-song {
+    border: 2px solid yellow;
+    padding: 7px 9px;
+    width: 30rem;
+    height: 30rem;
+}
+
+.music-description {
+    border: 2px solid white;
+    padding: 5px 10px;
+}
+
+#setting-btn {
+    background: white;
+    clip-path: circle(50%);
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    display: flex;
+    flex-shrink: 0;
+}
+
+img#pause-icon {
+    height: 60px;
+}
+img#trash-icon {
+    height: 60px;
+}
+
+.container-settings {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+}
+
+.music-btn {
+    cursor: pointer;
+    padding: 18px 36px;
+    font-family: var(--font-title);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px solid #00ffff;
+    background: rgba(0, 255, 255, .05);
+    overflow: hidden;
+    transition: background .3s, box-shadow .3s;
+}
+
+.return-music-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    cursor: pointer;
+    margin-top: 4rem;
+}

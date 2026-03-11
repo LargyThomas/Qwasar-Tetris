@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/screens.css">
+    <link rel="stylesheet" href="css/music.css">
     <title>Tetris</title>
   </head>
   <body>
@@ -170,7 +171,34 @@
       <div class="menu-message">
         <h2>Musique</h2>
       </div>
-      <div class="return-menu">
+      <div class="menu-message">
+        <h2>Bienvenue dans Tetris !</h2>
+        <p>Génération de textes</p>
+      </div>
+      <div class="container-menu">
+        <div class="librairy-bar">
+          <h2>Bibliothèque</h2>
+        </div>
+        <div class="container-body">
+            <div class="container-song">
+              <div class="music-description">
+                <button id="setting-btn">
+                  <img id="pause-icon" src="assets/sprites/icon/play-circle-fill.svg" alt="pause">
+                </button>
+                <h1 id="title-song">Title Song</h1>
+                <p id="authors-song">Authors</p>
+                <button id="setting-btn">
+                  <img id="trash-icon" src="assets/sprites/icon/trash3-fill.svg" alt="trash">
+                </button>
+              </div>
+            </div>
+          <div class="container-settings">
+            <button class="music-btn">Importer</button>
+            <button class="music-btn">Corbeille</button>
+          </div>
+        </div>
+      </div>
+      <div class="return-music-menu">
         <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
       </div>
     </div>
@@ -205,6 +233,3 @@
     </script>
   </body>
 </html>
-
-
-RESTE A FAIRE MIEUX L'UI POUR QUE SA SOIT EN DESSOUS ET PAS A COTE
