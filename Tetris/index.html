@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/gamemode.css">
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/screens.css">
     <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/parameters.css">
     <title>Tetris</title>
   </head>
   <body>
@@ -76,18 +78,31 @@
           <img id="mute-icon-modes" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
         </button>
       </div>
-      <div class="game-modes">
-        <div class="mode" onclick="startGame('classic')">
-          <h3 class="mode-title">Mode Classique</h3>
-          <p class="mode-description">Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
+      <div class="mode mode-classic" onclick="startGame('classic')" data-num="01">
+        <div class="mode-content">
+            <div class="mode-tag">// classique</div>
+            <div class="mode-title">Mode Classique</div>
         </div>
-        <div class="mode" onclick="startGame('sprint')">
-          <h3 class="mode-title">Mode Sprint</h3>
-          <p class="mode-description">Jouez contre la montre pour un temps limité et obtenez le meilleur score possible.</p>
+        <div class="mode-description">
+          <p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
         </div>
-        <div class="mode" onclick="startGame('marathon')">
-          <h3 class="mode-title">Mode Marathon</h3>
-          <p class="mode-description">Survivez le plus longtemps possible en complétant des lignes sans fin.</p>
+      </div>
+      <div class="mode mode-sprint" onclick="startGame('sprint')" data-num="01">
+        <div class="mode-content">
+            <div class="mode-tag">// sprint</div>
+            <div class="mode-title">Mode Sprint</div>
+        </div>
+        <div class="mode-description">
+          <p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
+        </div>
+      </div>
+      <div class="mode mode-marathon" onclick="startGame('marathon')" data-num="01">
+        <div class="mode-content">
+            <div class="mode-tag">// marathon</div>
+            <div class="mode-title">Mode Marathon</div>
+        </div>
+        <div class="mode-description">
+          <p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
         </div>
       </div>
       <div class="return-menu">
@@ -209,9 +224,10 @@
       </div>
       <div class="menu-message">
         <h2>Crédits</h2>
-        <p>Développé par Thomas</p>
+        <p>Développé par Thomas LARGY</p>
         <p>Artworks par [Nom de l'artiste]</p>
         <p>Sons par Freesound</p>
+        <p>Icônes par Bootstrap</p>
       </div>
       <div class="return-menu">
         <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
