@@ -1,0 +1,132 @@
+#sectioncredits {
+	display: flex;
+	justify-content: center;
+}
+.credits {
+	flex-basis: 100rem;
+	margin: 2rem 0;
+	line-height: 1.2;
+	padding: 1rem;
+	animation: 60s credits linear infinite;
+	position: absolute;
+	top: 100%;
+	font-size: 1.4rem;
+	color: #c7c6ac;
+	font-family: adelle;
+	font-variant-ligatures: common-ligatures;
+	font-synthesis: none;
+}
+dl, dt, dd {
+	margin-left: 0;
+	margin-right:0;
+	padding-right:0;
+	padding-left:0;
+}
+#sectioncredits h1 {
+	font-family: adelle-condensed;
+	text-align: center;
+	font-weight: 400;
+	font-variant-caps: all-small-caps;
+	font-size: 3rem;
+	}	 
+em {
+		font-variant-caps: normal;
+		font-size: .8em;
+}
+
+#sectioncredits h2 {
+	text-align: center;
+	font-weight: 400;
+	font-size: 2.5rem;
+	margin-top: 5rem;
+	margin-bottom: .5rem;
+	font-variant-caps: all-small-caps;
+}
+
+#sectioncredits h3 {
+	text-align: center;
+	font-weight: 400;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
+#sectioncredits h4 {
+	text-align: center;
+	font-weight: 400;
+	font-size: 1.8rem;
+}
+
+.smcaps {
+	font-variant-caps: all-small-caps;
+}
+
+
+ .credits__single {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+ .credits__single dt {
+	 text-align: center;
+	 font-variant-caps: all-small-caps;
+	 margin-top: 1.7rem;
+}
+ .credits__single dd {
+	 text-align: center;
+	 margin-top: 0.6rem;
+}
+ .credits__double {
+	 display: grid;
+	 grid-template-columns: repeat(2, 1fr);
+	 gap: 0 2rem;
+}
+ .credits__double dt {
+	 text-align: right;
+	 font-variant-caps: all-small-caps;
+	 margin-top: 1.7rem;
+}
+ .credits__double dd {
+	 text-align: left;
+	 grid-column: 0.6666666667;
+	 margin-top: 0.6rem;
+}
+ .credits__double dt + dd {
+	 margin-top: 1.7rem;
+}
+ .credits__inline {
+	 list-style: none;
+	 display: flex;
+	 flex-wrap: wrap;
+	 justify-content: center;
+	 margin-top: 1.7rem;
+}
+ .credits__inline li {
+	 padding: 0.3rem 0.8rem;
+}
+ .credits__music {
+	 display: flex;
+	 flex-wrap: wrap;
+	 justify-content: center;
+	 margin-top: 1.7rem;
+}
+ .credits__music dl {
+	 text-align: center;
+	 padding: 0 2rem 2rem 2rem;
+	 flex-basis: 30rem;
+}
+ .credits__music dt {
+	 font-style: italic;
+	 margin-bottom: 0.5rem;
+}
+ .credits__music dd {
+	 font-size: 1.5rem;
+}
+ 
+footer {
+	margin: 3rem;
+}
+@keyframes credits {
+		0% { top:	 100%; }
+	100% { top: -500%; }
+}

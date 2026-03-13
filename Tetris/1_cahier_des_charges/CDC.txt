@@ -77,6 +77,26 @@ Pour mes cards structures ex html
 </div>
 
 
+.mode-title {
+    position: absolute;
+    bottom: 24px;
+    text-align: center;
+    font: bold 1.5em var(--font-title);
+    transition: opacity 0.3s ease;
+}
+
+.mode-description {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.85);
+    color: var(--color-text);
+    border-radius: 0 0 8px 8px;
+    transition: bottom 0.3s ease;
+}
+
 
 tetris/
 │

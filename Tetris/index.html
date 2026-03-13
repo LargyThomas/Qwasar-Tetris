@@ -1,251 +1,285 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="tetris, game, jeu">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/game.css">
-    <link rel="stylesheet" href="css/gamemode.css">
-    <link rel="stylesheet" href="css/loader.css">
-    <link rel="stylesheet" href="css/screens.css">
-    <link rel="stylesheet" href="css/music.css">
-    <link rel="stylesheet" href="css/parameters.css">
-    <title>Tetris</title>
-  </head>
-  <body>
-    <audio id="music" src="assets/audio/music/default_track.mp3" loop></audio>
-    <audio id="sfx-rotate" src="assets/sfx/rotate.mp3"></audio>
-    <audio id="sfx-line-clear" src="assets/sfx/line_clear.mp3"></audio>
-    <audio id="sfx-level-up" src="assets/sfx/level_up.mp3"></audio>
-    <audio id="sfx-game-over" src="assets/sfx/game_over.mp3"></audio>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="tetris, game, jeu">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/menu.css">
+		<link rel="stylesheet" href="css/game.css">
+		<link rel="stylesheet" href="css/gamemode.css">
+		<link rel="stylesheet" href="css/loader.css">
+		<link rel="stylesheet" href="css/screens.css">
+		<link rel="stylesheet" href="css/music.css">
+		<link rel="stylesheet" href="css/parameters.css">
+		<link rel="stylesheet" href="css/credits.css">
+		<title>Tetris</title>
+	</head>
+	<body>
+		<audio id="music" src="assets/audio/music/default_track.mp3" loop></audio>
+		<audio id="sfx-rotate" src="assets/sfx/rotate.mp3"></audio>
+		<audio id="sfx-line-clear" src="assets/sfx/line_clear.mp3"></audio>
+		<audio id="sfx-level-up" src="assets/sfx/level_up.mp3"></audio>
+		<audio id="sfx-game-over" src="assets/sfx/game_over.mp3"></audio>
 
-    <div id="loadbar-screen" class="screen">
-      <div class="title">
-        <h1 class="glitch" data-text="Tetris">Tetris</h1>
-      </div>
-      <div class="loadbar-container">
-        <div id='loader'>
-          <div id='title' class='flex'>
-            <p class='loading-text'>LOADING</p>
-            <div class='therefore'>∴</div>
-            <p class="loading-number">%</p>
-          </div>
-          <div id='loading-bar-border'>
-            <div class='loading-bar'>
-            </div>
-          </div>
-          <div id='warning'>
-            <p>
-              <div class='exclamation'>!</div>
-              &nbsp CAUTION, Do not turn off.
-            </p>
-          <div id='line-cascates'></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="menu-screen" class="screen">
-      <div class="hud-bar">
-        <h1 class="hud-item">Tetris</h1>
-        <button id="mute-btn" onclick="toggleMute()">
-          <img id="mute-icon" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
-        </button>
-      </div>
-      <div class="menu-message">
-        <h2>Bienvenue dans Tetris !</h2>
-        <p>Génération de textes</p>
-      </div>
-      <div class="menu-perso">
-        <img src="assets/sprites/character/welcome.jpeg" alt="Character" class="character">
-      </div>
-      <div class="menu-controls">
-        <button onclick="showScreen('modes-screen')" class="menu-buttons" data-text="Mode-de-jeu">Mode de jeu</button>
-        <button onclick="showScreen('parameters-screen')" class="menu-buttons" data-text="Parametres">Paramètres</button>
-        <button onclick="showScreen('music-screen')" class="menu-buttons" data-text="Musique">Musique</button>
-      </div>
-      <footer>
-        <button onclick="showScreen('credits-screen')" class="footer-button">Crédits</button>
-        <p class="footer-text">© 2026 Tetris. Tous droits réservés.</p>
-      </footer>
-    </div>
+		<div id="loadbar-screen" class="screen">
+			<div class="title">
+				<h1 class="glitch" data-text="Tetris">Tetris</h1>
+			</div>
+			<div class="loadbar-container">
+				<div id='loader'>
+					<div id='title' class='flex'>
+						<p class='loading-text'>LOADING</p>
+						<div class='therefore'>∴</div>
+						<p class="loading-number">%</p>
+					</div>
+					<div id='loading-bar-border'>
+						<div class='loading-bar'>
+						</div>
+					</div>
+					<div id='warning'>
+						<p>
+							<div class='exclamation'>!</div>
+							&nbsp CAUTION, Do not turn off.
+						</p>
+					<div id='line-cascates'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="menu-screen" class="screen">
+			<div class="hud-bar">
+				<h1 class="hud-item">Tetris</h1>
+				<button id="mute-btn" onclick="toggleMute()">
+					<img id="mute-icon" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
+				</button>
+			</div>
+			<div class="menu-message">
+				<h2>Bienvenue dans Tetris !</h2>
+				<p>Génération de textes</p>
+			</div>
+			<div class="menu-perso">
+				<img src="assets/sprites/character/welcome.jpeg" alt="Character" class="character">
+			</div>
+			<div class="menu-controls">
+				<button onclick="showScreen('modes-screen')" class="menu-buttons" data-text="Mode-de-jeu">Mode de jeu</button>
+				<button onclick="showScreen('parameters-screen')" class="menu-buttons" data-text="Parametres">Paramètres</button>
+				<button onclick="showScreen('music-screen')" class="menu-buttons" data-text="Musique">Musique</button>
+			</div>
+			<footer>
+				<button onclick="showScreen('credits-screen')" class="footer-button">Crédits</button>
+				<p class="footer-text">© 2026 Tetris. Tous droits réservés.</p>
+			</footer>
+		</div>
 
-    <div id="modes-screen" class="screen">
-      <div class="hud-bar">
-        <h1 class="hud-item">Tetris</h1>
-        <button id="mute-btn-modes" onclick="toggleMute()">
-          <img id="mute-icon-modes" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
-        </button>
-      </div>
-      <div class="mode mode-classic" onclick="startGame('classic')" data-num="01">
-        <div class="mode-content">
-            <div class="mode-tag">// classique</div>
-            <div class="mode-title">Mode Classique</div>
-        </div>
-        <div class="mode-description">
-          <p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
-        </div>
-      </div>
-      <div class="mode mode-sprint" onclick="startGame('sprint')" data-num="01">
-        <div class="mode-content">
-            <div class="mode-tag">// sprint</div>
-            <div class="mode-title">Mode Sprint</div>
-        </div>
-        <div class="mode-description">
-          <p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
-        </div>
-      </div>
-      <div class="mode mode-marathon" onclick="startGame('marathon')" data-num="01">
-        <div class="mode-content">
-            <div class="mode-tag">// marathon</div>
-            <div class="mode-title">Mode Marathon</div>
-        </div>
-        <div class="mode-description">
-          <p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
-        </div>
-      </div>
-      <div class="return-menu">
-        <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
-      </div>
-    </div>
+		<div id="modes-screen" class="screen">
+			<div class="hud-bar">
+				<h1 class="hud-item">Tetris</h1>
+				<button id="mute-btn-modes" onclick="toggleMute()">
+					<img id="mute-icon-modes" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
+				</button>
+			</div>
+			<div class="container-mode-body">
+				<div class="mode mode-classic" onclick="startGame('classic')" data-num="01">
+					<div class="mode-content">
+							<div class="mode-tag">// classique</div>
+							<div class="mode-title">Mode Classique</div>
+					</div>
+					<div class="mode-description">
+						<p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
+					</div>
+				</div>
+				<div class="mode mode-sprint" onclick="startGame('sprint')" data-num="02">
+					<div class="mode-content">
+							<div class="mode-tag">// sprint</div>
+							<div class="mode-title">Mode Sprint</div>
+					</div>
+					<div class="mode-description">
+						<p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
+					</div>
+				</div>
+				<div class="mode mode-marathon" onclick="startGame('marathon')" data-num="03">
+					<div class="mode-content">
+							<div class="mode-tag">// marathon</div>
+							<div class="mode-title">Mode Marathon</div>
+					</div>
+					<div class="mode-description">
+						<p>Le mode classique traditionnel de Tetris où vous placez les pièces pour compléter des lignes.</p>
+					</div>
+				</div>
+			</div>
+			<div class="return-menu">
+				<button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
+			</div>
+		</div>
 
-    <div id="game-screen" class="screen">
-      <div class="hud-bar">
-        <div id="score" class="hud-item"></div>
-        <div id="level" class="hud-item"></div>
-        <div id="coins" class="hud-item"></div>
-      </div>
-      <canvas id="tetris" width="240" height="400"></canvas>
+		<div id="game-screen" class="screen">
+			<div class="hud-bar">
+				<div id="score" class="hud-item"></div>
+				<div id="level" class="hud-item"></div>
+				<div id="coins" class="hud-item"></div>
+			</div>
+			<canvas id="tetris" width="240" height="400"></canvas>
 
-      <div id="pause-screen">
-        <div class="screen-modal">
-          <h2>Pause</h2>
-          <button id="continue-btn" class="screen-btn">Continuer</button>
-          <button id="menu-btn" class="screen-btn">Menu</button>
-        </div>
-      </div>
+			<div id="pause-screen">
+				<div class="screen-modal">
+					<h2>Pause</h2>
+					<button id="continue-btn" class="screen-btn">Continuer</button>
+					<button id="menu-btn" class="screen-btn">Menu</button>
+				</div>
+			</div>
 
-      <div id="gameover-screen">
-        <div class="screen-modal">
-          <h2>Game Over</h2>
-          <button id="restart-btn" class="screen-btn">Restart</button>
-          <button id="menu-btn2" class="screen-btn">Menu</button>
-        </div>
-      </div>
-    </div>
+			<div id="gameover-screen">
+				<div class="screen-modal">
+					<h2>Game Over</h2>
+					<button id="restart-btn" class="screen-btn">Restart</button>
+					<button id="menu-btn2" class="screen-btn">Menu</button>
+				</div>
+			</div>
+		</div>
 
-    <div id="parameters-screen" class="screen">
-      <div class="hud-bar">
-        <h1 class="hud-item">Tetris</h1>
-        <button id="mute-btn-params" onclick="toggleMute()">
-          <img id="mute-icon-params" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
-        </button>
-      </div>
-      <div class="menu-message">
-        <h2>Paramètres</h2>
-        <p>Génération de textes</p>
-      </div>
-      <div class="parameters">
-        <div class="container-left">
-          <div onclick="showScreen('dialog-screen')" class="touch">Descendre</div>
-          <div onclick="showScreen('dialog-screen')" class="touch">Gauche</div>
-          <div onclick="showScreen('dialog-screen')" class="touch">Droite</div>
-        </div>
-        <div class="container-right">
-          <div onclick="showScreen('dialog-screen')" class="touch">Rotation</div>
-          <div onclick="showScreen('dialog-screen')" class="touch">Pause</div>
-          <div onclick="showScreen('dialog-screen')" class="touch">Reset</div>
-        </div>
-      </div>
-      <div id="dialog-screen" class="case-screen">
-          <!-- Le but est de faire une case dialogue ou il y aura un titre, une case cliquable où 
-            l'utilisateur pourra assigner une touche à une action (la description sera en fond de case) 
-            et enfin un bouton pour valider et fermer. -->
-          <form>
-            <label class="boite-description">Paramètres des Touches</label>
-            <input type="text" id="key-input" class="key-input" value="" placeholder="Entrer une touche...">
-          </form>
-          <div class="container-button">
-            <button id="validate-btn" class="validate-button">Valider</button>
-            <button id="cancel-btn" class="cancel-button">Annuler</button>
-          </div>
-      </div>
-      <div class="return-menu">
-        <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
-      </div>
-    </div>
+		<div id="parameters-screen" class="screen">
+			<div class="hud-bar">
+				<h1 class="hud-item">Tetris</h1>
+				<button id="mute-btn-params" onclick="toggleMute()">
+					<img id="mute-icon-params" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
+				</button>
+			</div>
+			<div class="menu-message">
+				<h2>Paramètres</h2>
+				<p>Génération de textes</p>
+			</div>
+			<div class="parameters">
+				<div class="container-left">
+					<div onclick="showScreen('dialog-screen')" class="touch">Descendre</div>
+					<div onclick="showScreen('dialog-screen')" class="touch">Gauche</div>
+					<div onclick="showScreen('dialog-screen')" class="touch">Droite</div>
+				</div>
+				<div class="container-right">
+					<div onclick="showScreen('dialog-screen')" class="touch">Rotation</div>
+					<div onclick="showScreen('dialog-screen')" class="touch">Pause</div>
+					<div onclick="showScreen('dialog-screen')" class="touch">Reset</div>
+				</div>
+			</div>
+			<div id="dialog-screen" class="case-screen">
+					<!-- Le but est de faire une case dialogue ou il y aura un titre, une case cliquable où 
+						l'utilisateur pourra assigner une touche à une action (la description sera en fond de case) 
+						et enfin un bouton pour valider et fermer. -->
+					<form>
+						<label class="boite-description">Paramètres des Touches</label>
+						<input type="text" id="key-input" class="key-input" value="" placeholder="Entrer une touche...">
+					</form>
+					<div class="container-button">
+						<button id="validate-btn" class="validate-button">Valider</button>
+						<button id="cancel-btn" class="cancel-button">Annuler</button>
+					</div>
+			</div>
+			<div class="return-menu">
+				<button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
+			</div>
+		</div>
 
-    <div id="music-screen" class="screen">
-      <div class="hud-bar">
-        <h1 class="hud-item">Tetris</h1>
-        <button id="mute-btn-music" onclick="toggleMute()">
-          <img id="mute-icon-music" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
-        </button>
-      </div>
-      <div class="menu-message">
-        <h2>Musique</h2>
-      </div>
-      <div class="menu-message">
-        <h2>Bienvenue dans Tetris !</h2>
-        <p>Génération de textes</p>
-      </div>
-      <div class="container-menu">
-        <div class="librairy-bar">
-          <h2>Bibliothèque</h2>
-        </div>
-        <div class="container-body">
-            <div class="container-song">
-              <div class="music-description">
-                <button id="setting-btn">
-                  <img id="pause-icon" src="assets/sprites/icon/play-circle-fill.svg" alt="pause">
-                </button>
-                <h1 id="title-song">Title Song</h1>
-                <p id="authors-song">Authors</p>
-                <button id="setting-btn">
-                  <img id="trash-icon" src="assets/sprites/icon/trash3-fill.svg" alt="trash">
-                </button>
-              </div>
-            </div>
-          <div class="container-settings">
-            <button class="music-btn">Importer</button>
-            <button class="music-btn">Corbeille</button>
-          </div>
-        </div>
-      </div>
-      <div class="return-music-menu">
-        <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
-      </div>
-    </div>
+		<div id="music-screen" class="screen">
+			<div class="hud-bar">
+				<h1 class="hud-item">Tetris</h1>
+				<button id="mute-btn-music" onclick="toggleMute()">
+					<img id="mute-icon-music" src="assets/sprites/icon/volume-unmute.svg" alt="mute">
+				</button>
+			</div>
+			<div class="menu-message">
+				<h2>Musique</h2>
+			</div>
+			<div class="menu-message">
+				<h2>Bienvenue dans Tetris !</h2>
+				<p>Génération de textes</p>
+			</div>
+			<div class="container-menu">
+				<div class="librairy-bar">
+					<h2>Bibliothèque</h2>
+				</div>
+				<div class="container-body">
+						<div class="container-song">
+							<div class="music-description">
+								<button id="setting-btn">
+									<img id="pause-icon" src="assets/sprites/icon/play-circle-fill.svg" alt="pause">
+								</button>
+								<h1 id="title-song">Title Song</h1>
+								<p id="authors-song">Authors</p>
+								<button id="setting-btn">
+									<img id="trash-icon" src="assets/sprites/icon/trash3-fill.svg" alt="trash">
+								</button>
+							</div>
+						</div>
+					<div class="container-settings">
+						<button class="music-btn">Importer</button>
+						<button class="music-btn">Corbeille</button>
+					</div>
+				</div>
+			</div>
+			<div class="return-music-menu">
+				<button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
+			</div>
+		</div>
 
-    <div id="credits-screen" class="screen">
-      <div class="hud-bar">
-        <h1 class="hud-item">Tetris</h1>
-      </div>
-      <div class="menu-message">
-        <h2>Crédits</h2>
-        <p>Développé par Thomas LARGY</p>
-        <p>Artworks par [Nom de l'artiste]</p>
-        <p>Sons par Freesound</p>
-        <p>Icônes par Bootstrap</p>
-      </div>
-      <div class="return-menu">
-        <button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
-      </div>
-    </div>
+		<div id="credits-screen" class="screen">
+			<section id="sectioncredits">
+				<div class="credits">
+					<h1>Tetris<br><em>Revisiter le jeu sous une forme différente !</em></h1>
 
-    <script src="js/systems/audio.js"></script>
-    <script type="module" src="js/my_tetris.js"></script>
+					<dl class="credits__single">
+						<dt>Réalisé par</dt>
+						<dd>Thomas Largy (moi)</dd>
+						<dt>Écrit par</dt>
+						<dd>Moi</dd>
+						<dt>Développé par</dt>
+						<dd>Toujours MOI</dd>
+						<dt>Directection artistique</dt>
+						<dd>ENCORE MOI</dd>
+					</dl>
 
-    <script>
-      function showScreen(id) {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-      }
-      
-      function startGame(mode) {
-        showScreen('game-screen');
-      }
-    </script>
-  </body>
+					<h2>Avec</h2>
+					<dl class="credits__single">
+						<dt>Personne (j'aime pas les gens)</dd>
+					</dl>
+
+					<h2>Crew</h2>
+					<dl class="credits__double">
+            <dt>Son</dt>
+            <dd>Freesound</dd>
+            <dt>Icône</dt>
+            <dd>Bootstrap</dd>
+						<dt>Dessinateur</dt>
+						<dd>Moi</dd>
+					</dl>
+
+					<h2>Inspiration</h2>
+					<dl class="credits__double">
+						<dt>Thème</dt>
+						<dd>Cyberpunk</dd>
+					</dl>
+
+					<h2>Music</h2>
+					<div class="credits__music">
+							<dd>Freesound</dd>
+				</div>
+			</section>
+			<div class="return-menu">
+				<button onclick="showScreen('menu-screen')" class="return-button">Retour au menu</button>
+			</div>
+		</div>
+
+		<script src="js/systems/audio.js"></script>
+		<script type="module" src="js/my_tetris.js"></script>
+
+		<script>
+			function showScreen(id) {
+				document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+				document.getElementById(id).classList.add('active');
+			}
+			
+			function startGame(mode) {
+				showScreen('game-screen');
+			}
+		</script>
+	</body>
 </html>
