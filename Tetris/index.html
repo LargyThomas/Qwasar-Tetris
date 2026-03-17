@@ -59,7 +59,7 @@
 				<p>Génération de textes</p>
 			</div>
 			<div class="menu-perso">
-				<img src="assets/sprites/character/welcome.jpeg" alt="Character" class="character">
+				<img src="assets/sprites/character/welcome.jpeg" class="character" alt="Character">
 			</div>
 			<div class="menu-controls">
 				<button onclick="showScreen('modes-screen')" class="menu-buttons" data-text="Mode-de-jeu">Mode de jeu</button>
@@ -114,12 +114,66 @@
 		</div>
 
 		<div id="game-screen" class="screen">
-			<div class="hud-bar">
-				<div id="score" class="hud-item"></div>
-				<div id="level" class="hud-item"></div>
-				<div id="coins" class="hud-item"></div>
-			</div>
+      <div class="left-container">
+        <div class="preview-music-game">
+          <div class="image-preview"></div>
+          <div class="preview-container-right">
+            <div class="description-container"></div>
+            <div class="play-bar">
+              <div class="music-song-icon-left"></div>
+              <button id="setting-btn">
+                <img id="pause-icon" src="assets/sprites/icon/play-circle-fill.svg" alt="pause">
+              </button>
+              <div class="music-song-icon-right"></div>
+            </div>
+          </div>
+        </div>
+        <div class="start-game-button">
+          <h3>Start</h3>
+        </div>
+        <div class="game-perso">
+          <img src="assets/sprites/character/welcome.jpeg" class="character" alt="Character">
+        </div>
+        <div class="next-tetriminos">
+          <h3>tetriminos</h3>
+        </div>
+      </div>
 			<canvas id="tetris" width="240" height="400"></canvas>
+      <div class="right-container">
+        <div class="points">
+          <h3 class="title-case">// Points</h3>
+          <div class="body-case">
+            <div class="icon">
+              <img class="points-img" src="" alt="Points image"/>
+            </div>
+            <div class="description-case">
+              <h2 class="count">00</h2>
+            </div>
+          </div>
+        </div>
+        <div class="level">
+          <h3 class="title-case">// Level</h3>
+          <div class="body-case">
+            <div class="icon">
+              <img class="levels-img" src="" alt="Level image"/>
+            </div>
+            <div class="description-case">
+              <h2 class="count">00</h2>
+            </div>
+          </div>
+        </div>
+        <div class="coins">
+          <h3 class="title-case">// Coins</h3>
+          <div class="body-case">
+            <div class="icon">
+              <img class="coins-img" src="" alt="Coins image"/>
+            </div>
+            <div class="description-case">
+              <h2 class="count">00</h2>
+            </div>
+          </div>
+        </div>
+      </div>
 
 			<div id="pause-screen">
 				<div class="screen-modal">
