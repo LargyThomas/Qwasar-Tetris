@@ -1,18 +1,18 @@
 .container-mode-body {
-    display:flex;
+    display: flex;
     justify-content: center;
-    padding: 7rem;
-    gap: 7rem;
+    padding: 48px;
+    gap: 24px;
 }
 
 .mode {
-    width: 400px;
-    height: 600px;
-    background-color: #07070f;
-    border: 2px solid white;
+    width: 280px;
+    height: 420px;
+    background: var(--bg2);
+    border: 1px solid var(--border-violet);
     position: relative;
     overflow: hidden;
-    padding: 50px;
+    padding: 28px;
     cursor: pointer;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -20,14 +20,30 @@
 .mode::before {
     content: attr(data-num);
     position: absolute;
+    top: 12px; right: 16px;
     font-family: var(--font-title);
     font-size: 75px;
-    color: var(--color-dark);
+    font-weight: 900;
+    color: rgba(194, 82, 225, 0.06);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.mode::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--violet), var(--blue));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    box-shadow: var(--glow-violet);
 }
 
 .mode:hover {
-    border-color: rgba(0, 255, 229, 0.4);
-    box-shadow: inset 0 0 40px rgba(0, 255, 229, 0.03)
+    border-color: rgba(194, 82, 225, 0.5);
+    box-shadow: inset 0 0 40px rgba(194, 82, 225, 0.04);
 }
 
 .mode:hover::after {
@@ -36,48 +52,54 @@
 
 .mode-content {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 35px;
-    gap: 5px;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px;
 }
 
 .mode-tag {
-    font: 1em var(--font-ui);
+    font-family: var(--font-ui);
+    font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    opacity: 0.6;
-    transition: height 0.3s ease;
-}
-
-.mode:hover .mode-tag {
-    height: 63px;
+    color: var(--violet);
+    opacity: 0.7;
+    margin-bottom: 8px;
 }
 
 .mode-title {
-    font: bold 1.5em var(--font-title);
+    font-family: var(--font-title);
+    font-size: 1em;
+    font-weight: 700;
     letter-spacing: 2px;
+    color: var(--color-text);
     text-transform: uppercase;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .mode:hover .mode-title {
     opacity: 0;
+    transform: translateY(-8px);
 }
 
 .mode-description {
     position: absolute;
     bottom: -100%;
-    left: 0;
-    width: 100%;
-    padding: 24px;
-    background: rgba(0, 0, 0, 0.85);
-    color: var(--color-text);
-    border-radius: 0 0 8px 8px;
-    transition: bottom 0.3s ease;
+    left: 0; width: 100%;
+    padding: 24px 28px;
+    background: linear-gradient(to top, var(--bg2) 70%, transparent);
+    color: var(--color-muted);
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    transition: bottom 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .mode:hover .mode-description {
     bottom: 0;
 }
+
+/* Variantes par mode */
+.mode-sprint::after   { background: linear-gradient(90deg, var(--blue), var(--violet)); box-shadow: var(--glow-blue); }
+.mode-marathon::after { background: linear-gradient(90deg, var(--pink), var(--violet)); box-shadow: var(--glow-pink); }
+.mode-sprint   .mode-tag { color: var(--blue); }
+.mode-marathon .mode-tag { color: var(--pink); }

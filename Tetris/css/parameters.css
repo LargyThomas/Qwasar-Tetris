@@ -1,13 +1,41 @@
-/* parameters.css : Variables CSS globales et paramètres */
-:root {
-    --font-title:   'Orbitron', monospace;
-    --font-ui:      'Share Tech Mono', monospace;
-    --bg:           #0A0A12;
-    --color-text:   #E8E8F0;
-    --color-muted:  #7A7A9A;
-    --color-accent: #BD00FF;
-    --color-dark:   #3A3A5A;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
-@import url("https://use.typekit.net/dlv3ztc.css");
+
+:root {
+    --font-title:    'Orbitron', monospace;
+    --font-ui:       'Share Tech Mono', monospace;
+
+    /* Fonds — midnight blue profond */
+    --bg:            #0d0b1a;
+    --bg2:           #12102a;
+    --bg3:           #1a1840;
+
+    /* Textes */
+    --color-text:    #e0d9f6;
+    --color-muted:   #586ae2;
+
+    /* Néons */
+    --violet:        #c252e1;
+    --blue:          #6ecbf5;
+    --pink:          #ff00cc;
+    --yellow:        #ffd600;
+
+    /* Dims */
+    --violet-dim:    rgba(194, 82, 225, 0.12);
+    --blue-dim:      rgba(110, 203, 245, 0.1);
+    --pink-dim:      rgba(255, 0, 204, 0.1);
+
+    /* Bordures */
+    --border-violet: rgba(194, 82, 225, 0.3);
+    --border-blue:   rgba(110, 203, 245, 0.2);
+    --border-pink:   rgba(255, 0, 204, 0.2);
+
+    /* Alias */
+    --color-accent:  var(--violet);
+    --color-dark:    #1a1840;
+
+    /* Glows */
+    --glow-violet:   0 0 8px var(--violet), 0 0 24px rgba(194, 82, 225, 0.35);
+    --glow-blue:     0 0 8px var(--blue),   0 0 24px rgba(110, 203, 245, 0.25);
+    --glow-pink:     0 0 8px var(--pink),   0 0 24px rgba(255, 0, 204, 0.25);
+    --glow-yellow:   0 0 8px var(--yellow), 0 0 20px rgba(255, 214, 0, 0.2);
+}

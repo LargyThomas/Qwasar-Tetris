@@ -1,95 +1,86 @@
-#music-screen {
-	padding-bottom: 80px;
-}
+#music-screen { padding-bottom: 80px; }
 
 .container-menu {
-	max-width: 900px;
-	margin: 0 auto;
-	border: 1px solid rgba(0, 255, 255, 0.2);
-	background: rgba(0, 255, 255, 0.02);
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid var(--border-violet);
+    background: var(--bg2);
 }
 
 .librairy-bar {
-	padding: 14px 24px;
-	border-bottom: 1px solid rgba(0, 255, 255, 0.15);
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	position: relative;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border-violet);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
 }
 
 .librairy-bar::after {
-	content: '';
-	position: absolute;
-	bottom: -1px;
-	left: 0;
-	width: 30%;
-	height: 1px;
-	background: linear-gradient(90deg, var(--cyan, #00ffff), transparent);
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--violet), transparent);
+    box-shadow: var(--glow-violet);
 }
 
 .librairy-bar h2 {
-	font-family: var(--font-title);
-	font-size: 0.75em;
-	font-weight: 700;
-	letter-spacing: 4px;
-	text-transform: uppercase;
-	color: #00ffff;
-	text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    font-family: var(--font-title);
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--violet);
+    text-shadow: var(--glow-violet);
 }
 
 .container-body {
-	display: flex;
-	flex-direction: row;
-	gap: 24px;
-	padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding: 20px;
 }
 
 .container-song {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	min-height: 300px;
-	max-height: 420px;
-	overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 300px;
+    max-height: 420px;
+    overflow-y: auto;
 }
 
-.container-song::-webkit-scrollbar {
-	width: 3px;
-}
-.container-song::-webkit-scrollbar-track {
-    background: transparent;
-}
-.container-song::-webkit-scrollbar-thumb {
-    background: rgba(0, 255, 255, 0.3);
-    border-radius: 2px;
-}
+.container-song::-webkit-scrollbar { width: 3px; }
+.container-song::-webkit-scrollbar-track { background: transparent; }
+.container-song::-webkit-scrollbar-thumb { background: var(--border-violet); border-radius: 2px; }
 
 .music-description {
     display: flex;
     align-items: center;
     gap: 14px;
     padding: 12px 16px;
-    border: 1px solid rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--border-violet);
     background: rgba(0, 0, 0, 0.3);
     transition: border-color 0.2s, background 0.2s;
     cursor: pointer;
 }
 
 .music-description:hover {
-    border-color: rgba(0, 255, 255, 0.35);
-    background: rgba(0, 255, 255, 0.04);
+    border-color: rgba(194, 82, 225, 0.45);
+    background: var(--violet-dim);
 }
 
 .music-description.playing {
-    border-color: rgba(0, 255, 255, 0.5);
-    background: rgba(0, 255, 255, 0.06);
+    border-color: var(--violet);
+    background: var(--violet-dim);
 }
 
 .music-description.playing #title-song {
-    color: #00ffff;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    color: var(--violet);
+    text-shadow: var(--glow-violet);
 }
 
 #title-song {
@@ -97,7 +88,7 @@
     font-size: 0.75em;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #e8e8f0;
+    color: var(--color-text);
     flex: 1;
     white-space: nowrap;
     overflow: hidden;
@@ -108,7 +99,7 @@
 #authors-song {
     font-family: var(--font-ui);
     font-size: 0.7em;
-    color: #7a7a9a;
+    color: var(--color-muted);
     letter-spacing: 1px;
     flex: 1;
     white-space: nowrap;
@@ -118,7 +109,7 @@
 
 #setting-btn {
     background: transparent;
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid var(--border-blue);
     border-radius: 50%;
     cursor: pointer;
     padding: 4px;
@@ -127,32 +118,24 @@
     justify-content: center;
     flex-shrink: 0;
     transition: border-color 0.2s, box-shadow 0.2s;
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
 }
-
 #setting-btn:hover {
-    border-color: #00ffff;
-    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+    border-color: var(--blue);
+    box-shadow: var(--glow-blue);
 }
 
 img#pause-icon {
-    width: 22px;
-    height: 22px;
+    width: 22px; height: 22px;
     filter: invert(1) sepia(1) saturate(3) hue-rotate(150deg);
 }
-
 img#trash-icon {
-    width: 18px;
-    height: 18px;
-    filter: invert(1) sepia(1) saturate(3) hue-rotate(300deg);
+    width: 18px; height: 18px;
+    filter: invert(40%) sepia(80%) saturate(5) hue-rotate(270deg);
     opacity: 0.5;
     transition: opacity 0.2s;
 }
-
-#setting-btn:hover img#trash-icon {
-    opacity: 1;
-}
+#setting-btn:hover img#trash-icon { opacity: 1; }
 
 .container-settings {
     display: flex;
@@ -170,29 +153,27 @@ img#trash-icon {
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #fff;
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    background: rgba(0, 255, 255, 0.03);
+    color: var(--color-text);
+    border: 1px solid var(--border-blue);
+    background: var(--blue-dim);
     transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
     white-space: nowrap;
 }
-
 .music-btn:hover {
-    background: rgba(0, 255, 255, 0.08);
-    border-color: #00ffff;
-    box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+    background: rgba(110, 203, 245, 0.08);
+    border-color: var(--blue);
+    box-shadow: var(--glow-blue);
 }
 
 .music-btn:last-child {
-    border-color: rgba(255, 0, 110, 0.3);
-    color: rgba(255, 0, 110, 0.8);
+    border-color: var(--border-pink);
+    color: var(--pink);
+    background: var(--pink-dim);
 }
-
 .music-btn:last-child:hover {
-    background: rgba(255, 0, 110, 0.06);
-    border-color: #ff006e;
-    box-shadow: 0 0 12px rgba(255, 0, 110, 0.2);
-    color: #ff006e;
+    background: rgba(255, 0, 204, 0.1);
+    border-color: var(--pink);
+    box-shadow: var(--glow-pink);
 }
 
 .return-music-menu {

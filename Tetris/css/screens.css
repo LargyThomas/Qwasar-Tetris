@@ -1,82 +1,115 @@
-/*
-    Un point désigne une classe tandis que le dièse désigne un id.
-    Un id doit être unique dans une page, tandis qu'une classe peut être utilisée pour plusieurs éléments.
-    Par exemple, si on a un élément avec l'id "pause-screen", vous pouvez le styliser en CSS avec "#pause-screen".
-    Si on a plusieurs éléments avec la classe "screen-btn", vous pouvez les styliser avec ".screen-btn".
-
-    # --> une personne
-    . --> une équipe
-*/
-
 #pause-screen,
 #gameover-screen {
     display: none;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(13, 11, 26, 0.88);
+    backdrop-filter: blur(6px);
     z-index: 10;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-#case-screen {
-    background-color: whitesmoke;
-    border: 2px solid blue;
-    border-radius: 8px;
-    width: 450px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 2px;
-    gap: 10px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    align-items: center;
-    justify-items: center;
-}
-
 #pause-screen.active,
-#gameover-screen.active,
-#case-screen.active {
+#gameover-screen.active {
     display: flex;
 }
 
 .screen-modal {
-    background: #222;
-    color: #fff;
-    padding: 32px 48px;
-    border-radius: 16px;
+    background: var(--bg2);
+    border: 1px solid var(--border-blue);
+    padding: 40px 56px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+    gap: 20px;
+    position: relative;
+    min-width: 280px;
+}
+
+.screen-modal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    box-shadow: var(--glow-blue);
+}
+
+/* Game over → violet */
+#gameover-screen .screen-modal {
+    border-color: var(--border-violet);
+}
+#gameover-screen .screen-modal::before {
+    background: linear-gradient(90deg, transparent, var(--violet), transparent);
+    box-shadow: var(--glow-violet);
 }
 
 .screen-modal h2 {
     font-family: var(--font-title);
-    letter-spacing: 2px;
+    font-size: 1.1em;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--blue);
+    text-shadow: var(--glow-blue);
 }
 
+#gameover-screen .screen-modal h2 {
+    color: var(--violet);
+    text-shadow: var(--glow-violet);
+}
+
+/* ── BOUTONS ── */
 .screen-btn {
-    width: 160px;
-    padding: 10px 0;
-    border: none;
-    border-radius: 8px;
-    background: #3a3a3a;
-    color: #fff;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.2s;
+    width: 180px;
+    padding: 12px 0;
+    background: transparent;
+    border: 1px solid var(--border-blue);
+    color: var(--blue);
     font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    border-radius: 0;
 }
 
 .screen-btn:hover {
-    background: #555;
+    background: var(--blue-dim);
+    border-color: var(--blue);
+    box-shadow: var(--glow-blue);
 }
+
+.screen-btn:last-child {
+    border-color: var(--border-violet);
+    color: var(--violet);
+}
+.screen-btn:last-child:hover {
+    background: var(--violet-dim);
+    border-color: var(--violet);
+    box-shadow: var(--glow-violet);
+}
+
+/* ── DIALOG CASE ── */
+#case-screen {
+    background: var(--bg2);
+    border: 1px solid var(--border-blue);
+    width: 450px;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px;
+    gap: 16px;
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    justify-items: center;
+    z-index: 200;
+}
+
+#case-screen.active { display: grid; }

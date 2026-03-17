@@ -1,153 +1,112 @@
-/*
-	Une palette de couleurs cyberpunk un peu sombre, avec des touches de néon pour 
-	les éléments interactifs.
-*/
-
 .menu-perso {
-	width: 400px;
-	height: 500px;
-	background-color: aliceblue;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 30px;
-	margin-left: 200px;
-	float: left;
+    width: 340px;
+    height: 440px;
+    border: 1px solid var(--border-violet);
+    background: var(--bg2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 200px;
+    float: left;
+    position: relative;
 }
+
+.menu-perso::before, .menu-perso::after {
+    content: '';
+    position: absolute;
+    width: 18px; height: 18px;
+    border-style: solid;
+    border-color: var(--violet);
+}
+.menu-perso::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; box-shadow: -2px -2px 8px rgba(194, 82, 225, 0.3); }
+.menu-perso::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; box-shadow: 2px 2px 8px rgba(194, 82, 225, 0.3); }
 
 .character {
-	width: 200px;
-	height: 200px;
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
 }
 
+/* ── BOUTONS ── */
 .menu-controls {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 600px;
-	justify-content: center;
-	gap: 30px;
-}
-
-.menu-buttons {
-	cursor: pointer;
-	padding: 18px 36px;
-	font-family: var(--font-title);
-	font-size: 14px;
-	font-weight: 700;
-	letter-spacing: 3px;
-	text-transform: uppercase;
-	color: #fff;
-	border: 2px solid #00ffff;
-	background: rgba(0, 255, 255, .05);
-	overflow: hidden;
-	transition: background .3s, box-shadow .3s;
-}
-
-.menu-buttons:hover {
-	background: rgba(0, 255, 255, .1);
-	box-shadow:
-		0 0 20px rgba(0, 255, 255, .3),
-		inset 0 0 20px rgba(0, 255, 255, .05);
-}
-
-.boite-description {
-	font: bold 1.2em var(--font-title);
-	color: white;
-	border: none;
-	border-radius: 8px;
-	width: 400px;
-	height: 100px;
-    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.key-input {
-    background-color: beige;
-    border: none;
-    height: 40px;
-    width: 300px;
-    text-align: center;
-    font-family: var(--font-title);
-    font-size: 1.1em;
-    cursor: text;
-    transition: opacity 0.2s;
-    left: 20%;
-    transform: translateX(20%);
-}
-
-.validate-button,
-.cancel-button {
-    background: #3a3a3a;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.2s;
-    font-family: var(--font-ui);
-    display: inline-block;
-    width: 150px;
-    height: 40px;
-}
-
-.validate-button:hover,
-.cancel-button:hover {
-    background: #555;
-}
-
-footer {
-    align-content: center;
-    color: var(--color-muted);
-    position: fixed;
-    padding: 10px;
-    bottom: 0;
-    width: 100%;
-    font-family: var(--font-ui);
-    font-size: 0.9em;
+    height: 600px;
     justify-content: center;
-    text-align: center;
+    gap: 20px;
 }
 
-.footer-text {
-    margin-top: 15px;
-    float : inline-end;
-    margin-right: 25px;
-}
-
-.footer-button {
-    float: inline-start;
+.menu-buttons {
     cursor: pointer;
-    padding: 8px 16px;
+    padding: 16px 40px;
     font-family: var(--font-title);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #fff;
-    border: 2px solid #00ffff;
-    background: rgba(0, 255, 255, .05);
-    overflow: hidden;
-    transition: background .3s, box-shadow .3s;
+    color: var(--color-text);
+    border: 1px solid var(--border-violet);
+    background: var(--violet-dim);
+    transition: background 0.25s, box-shadow 0.25s, border-color 0.25s, color 0.25s;
+    min-width: 240px;
 }
 
+.menu-buttons:hover {
+    background: rgba(194, 82, 225, 0.15);
+    border-color: var(--violet);
+    color: var(--violet);
+    box-shadow: var(--glow-violet);
+}
+
+/* ── FOOTER ── */
+footer {
+    color: var(--color-muted);
+    position: fixed;
+    padding: 10px 24px;
+    bottom: 0; left: 0; right: 0;
+    font-family: var(--font-ui);
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-violet);
+    background: rgba(13, 11, 26, 0.92);
+}
+
+.footer-text {
+    color: var(--color-muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-button {
+    cursor: pointer;
+    padding: 6px 16px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    border: 1px solid rgba(88, 106, 226, 0.4);
+    background: transparent;
+    transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
 .footer-button:hover {
-  background: rgba(0, 255, 255, .1);
-  box-shadow:
-    0 0 20px rgba(0, 255, 255, .3),
-    inset 0 0 20px rgba(0, 255, 255, .05);
+    color: var(--violet);
+    border-color: var(--violet);
+    box-shadow: var(--glow-violet);
 }
 
+/* ── PARAMÈTRES ── */
 .parameters {
-    background-color: aliceblue;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 50px;
-    gap: 30px;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 24px;
 }
 
 .container-left,
@@ -156,19 +115,131 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 16px;
 }
 
 .touch {
-    width: 400px;
-    height: 20px;
-    background-color: yellow;
-    border-radius: 8px;
+    width: 340px;
+    background: var(--bg2);
+    border: 1px solid var(--border-blue);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 50px;
-    color: var(--bg);
-    font: bold 1.2em var(--font-title);
+    padding: 16px 24px;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 0.9em;
+    letter-spacing: 1px;
     cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.touch::after {
+    content: attr(data-key, '[ — ]');
+    font-family: var(--font-title);
+    font-size: 0.7em;
+    color: var(--blue);
+    letter-spacing: 2px;
+    background: var(--bg3);
+    border: 1px solid var(--border-blue);
+    padding: 2px 10px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.touch:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    background: var(--blue-dim);
+}
+
+/* ── DIALOG REMAPPING ── */
+.case-screen {
+    background: var(--bg2);
+    border: 1px solid var(--border-blue);
+    width: 420px;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 32px;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 200;
+    box-shadow: 0 0 40px rgba(110, 203, 245, 0.08);
+}
+
+.case-screen::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+
+.case-screen.active { display: flex; }
+
+.boite-description {
+    font-family: var(--font-title);
+    font-size: 0.75em;
+    letter-spacing: 3px;
+    color: var(--blue);
+    text-transform: uppercase;
+    text-align: center;
+    width: auto; height: auto; padding: 0;
+}
+
+.key-input {
+    background: var(--bg3);
+    border: 1px solid var(--border-blue);
+    color: var(--blue);
+    height: 48px;
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 1.1em;
+    letter-spacing: 4px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    transform: none; left: auto;
+}
+.key-input:focus {
+    border-color: var(--blue);
+    box-shadow: var(--glow-blue);
+}
+
+.container-button {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.validate-button, .cancel-button {
+    background: transparent;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    padding: 10px 0;
+    font-family: var(--font-ui);
+    font-size: 0.85em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 140px;
+    height: auto;
+    border-radius: 0;
+}
+.cancel-button {
+    border-color: var(--border-violet);
+    color: var(--violet);
+}
+.validate-button:hover {
+    background: var(--blue);
+    color: var(--bg);
+    box-shadow: var(--glow-blue);
+}
+.cancel-button:hover {
+    background: var(--violet);
+    color: var(--bg);
+    box-shadow: var(--glow-violet);
 }
