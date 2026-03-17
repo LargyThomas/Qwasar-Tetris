@@ -11,8 +11,8 @@
 	position: absolute;
 	top: 100%;
 	font-size: 1.4rem;
-	color: #c7c6ac;
-	font-family: adelle;
+	color: var(--color-text);
+	font-family: var(--font-title);
 	font-variant-ligatures: common-ligatures;
 	font-synthesis: none;
 }
@@ -23,7 +23,7 @@ dl, dt, dd {
 	padding-left:0;
 }
 #sectioncredits h1 {
-	font-family: adelle-condensed;
+	font-family: var(--font-ui);
 	text-align: center;
 	font-weight: 400;
 	font-variant-caps: all-small-caps;
@@ -122,10 +122,7 @@ em {
  .credits__music dd {
 	 font-size: 1.5rem;
 }
- 
-footer {
-	margin: 3rem;
-}
+
 @keyframes credits {
 		0% { top:	 100%; }
 	100% { top: -500%; }
