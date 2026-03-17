@@ -16,15 +16,6 @@ EXPLICATION :
 
 BIEN PARLER DES CLAQUES ET PRBLM AVEC MUSIQUES DIFFérentes pages
 
-
-
-IDÉE IMPORTANTE :
-
-Tu lances ça va faire la barre de loading, essayer de faire un titre Tetris qui glicth pour devenir bien visible quand c'est à 100%
-quand c'est à 100% sa te fais un WELCOME TO TETRIS (un peu comme osu) + essayer de trouver comment faire une sorte d'animation pour 
-faire une transition vers le menu.
-
-
 Toutes les idées : 
 
 Touche e et r à faire pour respectivement mettre en pause et reset la partie à 0 -> Créer les fonction gameReset() et gamePause()
@@ -62,9 +53,20 @@ Faire un système de meilleur score sur les différents mode de jeu. ---> Créer
 IMPORTANT : TOUTES LES MUSIQUES / SONS SONT TÉLÉCHARGÉES DANS LEURS DOSSIERS RESPECTIFS
 
 
-En cours de création : 
 
-Pour mes cards structures ex html
+
+IDÉE EN COURS : Pour l'espace game : bibliothèque devient une preview de musique en cours. Ajouter une image aléatoire pour une musique donc pensée à avoir un truc qui va aller chercher dans le 
+dossier image une image aléatoire. Voir le shéma pour le html, les trucs à côté du bouton play/pause vont devoir être animé de manière cyberpunk (des glitchs un peu, on le voit en triples
+sur plusieurs hauteurs). Essayer de voir pour mettre un fond animé pareil en mode cyberpunk.
+
+                Mettre des trucs caché référence à Edgerunners Cyberpunk. À ajouter plus tard mais sa peut être cool.
+
+
+À FAIRE : Revoir la couleur entier du site, la palette doit être modifier un peu pour être dans le thème cyberpunk Edgerunners.
+
+
+
+En cours de création : 
 
 <div class="mode mode-classic" data-num="01">
     <div class="mode-content">
