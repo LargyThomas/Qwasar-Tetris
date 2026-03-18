@@ -114,81 +114,84 @@
 		</div>
 
 		<div id="game-screen" class="screen">
-      <div class="left-container">
-        <div class="preview-music-game">
-          <div class="image-preview"></div>
-          <div class="preview-container-right">
-            <div class="description-container"></div>
-            <div class="play-bar">
-              <div class="music-song-icon-left"></div>
-              <button id="setting-btn">
-                <img id="pause-icon" src="assets/sprites/icon/play-circle-fill.svg" alt="pause">
-              </button>
-              <div class="music-song-icon-right"></div>
-            </div>
-          </div>
-        </div>
-        <div class="start-game-button">
-          <h3>Start</h3>
-        </div>
-        <div class="game-perso">
-          <img src="assets/sprites/character/welcome.jpeg" class="character" alt="Character">
-        </div>
-        <div class="next-tetriminos">
-          <h3>tetriminos</h3>
-        </div>
-      </div>
-			<canvas id="tetris" width="240" height="400"></canvas>
-      <div class="right-container">
-        <div class="points">
-          <h3 class="title-case">// Points</h3>
-          <div class="body-case">
-            <div class="icon">
-              <img class="points-img" src="" alt="Points image"/>
-            </div>
-            <div class="description-case">
-              <h2 class="count">00</h2>
-            </div>
-          </div>
-        </div>
-        <div class="level">
-          <h3 class="title-case">// Level</h3>
-          <div class="body-case">
-            <div class="icon">
-              <img class="levels-img" src="" alt="Level image"/>
-            </div>
-            <div class="description-case">
-              <h2 class="count">00</h2>
-            </div>
-          </div>
-        </div>
-        <div class="coins">
-          <h3 class="title-case">// Coins</h3>
-          <div class="body-case">
-            <div class="icon">
-              <img class="coins-img" src="" alt="Coins image"/>
-            </div>
-            <div class="description-case">
-              <h2 class="count">00</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-
-			<div id="pause-screen">
-				<div class="screen-modal">
-					<h2>Pause</h2>
-					<button id="continue-btn" class="screen-btn">Continuer</button>
-					<button id="menu-btn" class="screen-btn">Menu</button>
+			<div class="left-container">
+				<div class="preview-music-game">
+				<div class="image-preview">
+					<img class="prev-img" src="assets/sprites/image_preview_music/eynoxart-street-7471408_640.jpg" alt="Preview Image">
+				</div>
+				<div class="preview-container-right">
+					<div class="description-container">
+						<h1>Titre</h1>
+						<h3>Authors</h3>
+					</div>
+					<div class="play-bar">
+					<div class="music-song-icon-left">
+						<img class="music-icon" src="" alt="Icône">
+					</div>
+					<button id="setting-btn">
+						<img id="pause-icon" src="assets/sprites/icon/play-circle-fill.svg" alt="pause">
+					</button>
+					<div class="music-song-icon-right">
+						<img class="music-icon" src="" alt="Icône">
+					</div>
+					</div>
+				</div>
+				</div>
+				<div class="container-start-btn">
+					<button onclick="" class="start-game-button">Start</button>
+				</div>
+				<div class="game-perso">
+					<img src="assets/sprites/character/welcome.jpeg" class="character" alt="Character">
 				</div>
 			</div>
-
-			<div id="gameover-screen">
-				<div class="screen-modal">
-					<h2>Game Over</h2>
-					<button id="restart-btn" class="screen-btn">Restart</button>
-					<button id="menu-btn2" class="screen-btn">Menu</button>
+			<canvas id="tetris" width="240" height="400"></canvas>
+			<div class="right-container">
+				<div class="next-tetriminos">
+					<h3>tetriminos</h3>
 				</div>
+				<div class="points">
+					<h3 class="title-case">// Points</h3>
+					<div class="body-case">
+						<div class="icon">
+							<img class="points-img" src="assets/sprites/icon/trophy-svgrepo-com.svg" alt="Points image">
+						</div>
+						<div id="score" class="description-case"></div>
+					</div>
+				</div>
+				<div class="level">
+					<h3 class="title-case">// Level</h3>
+					<div class="body-case">
+						<div class="icon">
+							<img class="levels-img" src="assets/sprites/icon/chevron-rank-svgrepo-com-17.svg" alt="Level image"/>
+						</div>
+						<div id="level"class="description-case"></div>
+					</div>
+          		</div>
+				<div class="coins">
+					<h3 class="title-case">// Coins</h3>
+					<div class="body-case">
+						<div class="icon">
+							<img class="coins-img" src="assets/sprites/icon/coins-money-svgrepo-com.svg" alt="Coins image"/>
+						</div>
+						<div id="coins" class="description-case"></div>
+					</div>
+				</div>
+			</div>
+      	</div>
+
+		<div id="pause-screen">
+			<div class="screen-modal">
+				<h2>Pause</h2>
+				<button id="continue-btn" class="screen-btn">Continuer</button>
+				<button id="menu-btn" class="screen-btn">Menu</button>
+			</div>
+		</div>
+
+		<div id="gameover-screen">
+			<div class="screen-modal">
+				<h2>Game Over</h2>
+				<button id="restart-btn" class="screen-btn">Restart</button>
+				<button id="menu-btn2" class="screen-btn">Menu</button>
 			</div>
 		</div>
 
