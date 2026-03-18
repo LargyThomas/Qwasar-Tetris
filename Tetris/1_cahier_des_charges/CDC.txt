@@ -59,10 +59,9 @@ IDÉE EN COURS : Pour l'espace game : bibliothèque devient une preview de musiq
 dossier image une image aléatoire. Voir le shéma pour le html, les trucs à côté du bouton play/pause vont devoir être animé de manière cyberpunk (des glitchs un peu, on le voit en triples
 sur plusieurs hauteurs). Essayer de voir pour mettre un fond animé pareil en mode cyberpunk.
 
-                Mettre des trucs caché référence à Edgerunners Cyberpunk. À ajouter plus tard mais sa peut être cool.
+Pensée à si le titre de la musique ou l'auteur(s) sont trop long pour la case défini, faudra faire un carrousel pour les faire glissé en continu de gauche à droite.
 
-
-À FAIRE : Revoir la couleur entier du site, la palette doit être modifier un peu pour être dans le thème cyberpunk Edgerunners.
+Pour le perso faire Rebeca Cyberpunk Edgerunners
 
 
 
