@@ -51,7 +51,7 @@ body {
         0 0 40px #0ff,
         0 0 80px #0ff,
         0 0 90px #0ff;
-    animation: flicker 2s infinite;
+    animation: flicker 3s infinite;
 }
 
 #mute-btn,
