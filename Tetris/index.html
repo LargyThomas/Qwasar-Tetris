@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="css/music.css">
 		<link rel="stylesheet" href="css/parameters.css">
 		<link rel="stylesheet" href="css/credits.css">
+		<link rel="stylesheet" href="css/constant.css">
 		<title>Tetris</title>
 	</head>
 	<body>
@@ -56,15 +57,17 @@
 			</div>
 			<div class="menu-message">
 				<h2>Bienvenue dans Tetris !</h2>
-				<p>Génération de textes</p>
+				<p>Les blocs tombent, le temps presse. Aligne, empile, survie.</p>
 			</div>
-			<div class="menu-perso">
-				<img src="assets/sprites/character/welcome.jpeg" class="character" alt="Character">
-			</div>
-			<div class="menu-controls">
-				<button onclick="showScreen('modes-screen')" class="menu-buttons" data-text="Mode-de-jeu">Mode de jeu</button>
-				<button onclick="showScreen('parameters-screen')" class="menu-buttons" data-text="Parametres">Paramètres</button>
-				<button onclick="showScreen('music-screen')" class="menu-buttons" data-text="Musique">Musique</button>
+			<div class="menu-body-container">
+				<div class="menu-perso">
+					<img src="assets/sprites/character/welcome.jpeg" class="character" alt="Character">
+				</div>
+				<div class="menu-controls">
+					<button onclick="showScreen('modes-screen')" class="menu-buttons" data-text="Mode-de-jeu">Mode de jeu</button>
+					<button onclick="showScreen('parameters-screen')" class="menu-buttons" data-text="Parametres">Paramètres</button>
+					<button onclick="showScreen('music-screen')" class="menu-buttons" data-text="Musique">Musique</button>
+				</div>
 			</div>
 			<footer>
 				<button onclick="showScreen('credits-screen')" class="footer-button">Crédits</button>
@@ -245,11 +248,9 @@
 			</div>
 			<div class="menu-message">
 				<h2>Musique</h2>
+				<p>Importe tes fichiers <strong>MP3</strong> depuis ton ordinateurs !</p>
 			</div>
-			<div class="menu-message">
-				<h2>Bienvenue dans Tetris !</h2>
-				<p>Génération de textes</p>
-			</div>
+			
 			<div class="container-menu">
 				<div class="librairy-bar">
 					<h2>Bibliothèque</h2>
@@ -301,10 +302,13 @@
 
 					<h2>Crew</h2>
 					<dl class="credits__double">
-            <dt>Son</dt>
-            <dd>Freesound</dd>
-            <dt>Icône</dt>
-            <dd>Bootstrap</dd>
+            			<dt>Son</dt>
+            			<dd>Freesound</dd>
+            			<dt>Icône</dt>
+            			<dd>Bootstrap</dd>
+						<dd>Svgrepo</dd>
+						<dt>Image</dt>
+						<dd>Pixabay</dd>
 						<dt>Dessinateur</dt>
 						<dd>Moi</dd>
 					</dl>
