@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #fff;
+    border: 2px solid cyan;
     width: 30rem;
     height: 12rem;
     padding: 20px;
@@ -28,7 +28,6 @@
 .image-preview {
     width:  8rem;
     height: 8rem;
-    border: 2px solid #fff;
 }
 
 .prev-img {
@@ -47,7 +46,10 @@
 .description-container {
     width: 12rem;
     height: 4rem;
-    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .play-bar {
@@ -57,15 +59,18 @@
 }
 
 .music-song-icon-left {
-    border: 2px solid cyan;
     width: 3rem;
     height: 3rem;
 }
 
 .music-song-icon-right {
-    border: 2px solid blue;
     width: 3rem;
     height: 3rem;
+}
+
+.music-icon {
+    width: 2.75rem;
+    height: 2.75rem;
 }
 
 .container-start-btn {
@@ -134,7 +139,7 @@ box-shadow: 2px 2px 8px rgba(194, 82, 225, 0.3);
 
 canvas {
     border: solid 0.2em #fff;
-    height: 90vh;
+    height: 93vh;
     justify-content: center;
 }
 
@@ -161,13 +166,23 @@ canvas {
 
 .next-tetriminos {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border: 2px solid #00ffff;
-    width: 30rem;
-    height: 12rem;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 25rem;
+    height: 10rem;
+    border: 1px solid cyan;
+    background-color: #0a0a0a;
 }
 
+#next-piece {
+    width: 120px;
+    height: 120px;
+    image-rendering: pixelated;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    background-color: #111;
+}
 
 .points, .level, .coins {
     display: flex;
