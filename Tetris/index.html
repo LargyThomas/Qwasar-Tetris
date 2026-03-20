@@ -129,19 +129,19 @@
 					</div>
 					<div class="play-bar">
 					<div class="music-song-icon-left">
-						<img class="music-icon" src="" alt="Icône">
+						<img class="music-icon" src="assets/sprites/icon/music-bars-svgrepo-com.svg" alt="Icône">
 					</div>
 					<button id="setting-btn">
 						<img id="pause-icon" src="assets/sprites/icon/play-circle-fill.svg" alt="pause">
 					</button>
 					<div class="music-song-icon-right">
-						<img class="music-icon" src="" alt="Icône">
+						<img class="music-icon" src="assets/sprites/icon/music-bars-svgrepo-com.svg" alt="Icône">
 					</div>
 					</div>
 				</div>
 				</div>
 				<div class="container-start-btn">
-					<button onclick="" class="start-game-button">Start</button>
+					<button onclick="window.startGameBtn()" class="start-game-button">Start</button>
 				</div>
 				<div class="game-perso">
 					<img src="assets/sprites/character/welcome.jpeg" class="character" alt="Character">
@@ -150,7 +150,7 @@
 			<canvas id="tetris" width="240" height="400"></canvas>
 			<div class="right-container">
 				<div class="next-tetriminos">
-					<h3>tetriminos</h3>
+					<canvas id="next-piece" width="80" height="80"></canvas>
 				</div>
 				<div class="points">
 					<h3 class="title-case">// Points</h3>
@@ -305,8 +305,9 @@
             			<dt>Son</dt>
             			<dd>Freesound</dd>
             			<dt>Icône</dt>
-            			<dd>Bootstrap</dd>
-						<dd>Svgrepo</dd>
+            			<dd>Bootstrap <br>
+							Svgrepo
+						</dd>
 						<dt>Image</dt>
 						<dd>Pixabay</dd>
 						<dt>Dessinateur</dt>
