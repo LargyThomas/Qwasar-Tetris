@@ -1,3 +1,10 @@
+.menu-body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40rem
+}
+
 .menu-perso {
     width: 340px;
     height: 440px;
@@ -6,8 +13,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    margin-left: 200px;
     float: left;
     position: relative;
 }
@@ -97,149 +102,5 @@ footer {
 .footer-button:hover {
     color: var(--violet);
     border-color: var(--violet);
-    box-shadow: var(--glow-violet);
-}
-
-/* ── PARAMÈTRES ── */
-.parameters {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
-    gap: 24px;
-}
-
-.container-left,
-.container-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-}
-
-.touch {
-    width: 340px;
-    background: var(--bg2);
-    border: 1px solid var(--border-blue);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 24px;
-    color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: 0.9em;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
-}
-
-.touch::after {
-    content: attr(data-key, '[ — ]');
-    font-family: var(--font-title);
-    font-size: 0.7em;
-    color: var(--blue);
-    letter-spacing: 2px;
-    background: var(--bg3);
-    border: 1px solid var(--border-blue);
-    padding: 2px 10px;
-    min-width: 80px;
-    text-align: center;
-}
-
-.touch:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-    background: var(--blue-dim);
-}
-
-/* ── DIALOG REMAPPING ── */
-.case-screen {
-    background: var(--bg2);
-    border: 1px solid var(--border-blue);
-    width: 420px;
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 32px;
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 200;
-    box-shadow: 0 0 40px rgba(110, 203, 245, 0.08);
-}
-
-.case-screen::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--blue), transparent);
-}
-
-.case-screen.active { display: flex; }
-
-.boite-description {
-    font-family: var(--font-title);
-    font-size: 0.75em;
-    letter-spacing: 3px;
-    color: var(--blue);
-    text-transform: uppercase;
-    text-align: center;
-    width: auto; height: auto; padding: 0;
-}
-
-.key-input {
-    background: var(--bg3);
-    border: 1px solid var(--border-blue);
-    color: var(--blue);
-    height: 48px;
-    width: 100%;
-    text-align: center;
-    font-family: var(--font-title);
-    font-size: 1.1em;
-    letter-spacing: 4px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    transform: none; left: auto;
-}
-.key-input:focus {
-    border-color: var(--blue);
-    box-shadow: var(--glow-blue);
-}
-
-.container-button {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-}
-
-.validate-button, .cancel-button {
-    background: transparent;
-    border: 1px solid var(--blue);
-    color: var(--blue);
-    padding: 10px 0;
-    font-family: var(--font-ui);
-    font-size: 0.85em;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-    width: 140px;
-    height: auto;
-    border-radius: 0;
-}
-.cancel-button {
-    border-color: var(--border-violet);
-    color: var(--violet);
-}
-.validate-button:hover {
-    background: var(--blue);
-    color: var(--bg);
-    box-shadow: var(--glow-blue);
-}
-.cancel-button:hover {
-    background: var(--violet);
-    color: var(--bg);
     box-shadow: var(--glow-violet);
 }
