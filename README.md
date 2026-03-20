@@ -120,3 +120,5 @@ Puis ouvrir `http://localhost:5500` dans le navigateur.
 
 Réalisé par **Thomas Largy**  
 Assets : Freesound · Bootstrap Icons · Svgrepo · Pixabay
+
+Tetris : https://largythomas.github.io/Qwasar-Tetris/
