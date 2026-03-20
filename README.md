@@ -1,122 +1,122 @@
 # 🎮 Qwasar-Tetris
 
-A custom Tetris game built with vanilla JavaScript, HTML5 Canvas and CSS.  
-Cyberpunk-inspired design, multiple game modes, music system and coin progression.
+Un Tetris personnalisé développé en JavaScript vanilla, HTML5 Canvas et CSS.  
+Design inspiré du cyberpunk, plusieurs modes de jeu, système de musique et progression.
 
 ---
 
-## 📁 Project Structure
+## 📁 Structure du projet
 
 ```
 Tetris/
 ├── index.html
 ├── css/
-│   ├── constant.css       # CSS variables (colors, fonts...)
-│   ├── style.css          # Global styles
-│   ├── menu.css           # Main menu
-│   ├── game.css           # In-game screen
-│   ├── gamemode.css       # Game mode selection screen
-│   ├── screens.css        # Pause & game over overlays
-│   ├── loader.css         # Loading bar animation
-│   ├── music.css          # Music screen
-│   ├── parameters.css     # Settings screen
-│   └── credits.css        # Credits screen
+│   ├── constant.css       # Variables CSS (couleurs, polices...)
+│   ├── style.css          # Styles globaux
+│   ├── menu.css           # Menu principal
+│   ├── game.css           # Écran de jeu
+│   ├── gamemode.css       # Écran de sélection de mode
+│   ├── screens.css        # Overlays pause & game over
+│   ├── loader.css         # Animation de chargement
+│   ├── music.css          # Écran musique
+│   ├── parameters.css     # Écran paramètres
+│   └── credits.css        # Écran crédits
 ├── js/
-│   ├── my_tetris.js       # Main entry point
+│   ├── my_tetris.js       # Point d'entrée principal
 │   ├── core/
-│   │   ├── board.js       # Grid creation, merge, collision
-│   │   ├── physics.js     # Piece rotation logic
-│   │   └── tetrominos.js  # Piece shapes definitions
+│   │   ├── board.js       # Création de la grille, fusion, collisions
+│   │   ├── physics.js     # Logique de rotation des pièces
+│   │   └── tetrominos.js  # Définition des formes de pièces
 │   ├── data/
-│   │   ├── config.js      # Canvas, arena, player state
-│   │   └── keybindings.js # Keyboard controls
+│   │   ├── config.js      # Canvas, arène, état du joueur
+│   │   └── keybindings.js # Contrôles clavier
 │   ├── game/
-│   │   ├── game.js        # Main game loop
-│   │   ├── level.js       # Level & progression system
-│   │   ├── scoring.js     # Score display
-│   │   └── coins.js       # Coins display
+│   │   ├── game.js        # Boucle de jeu principale
+│   │   ├── level.js       # Système de niveaux et progression
+│   │   ├── scoring.js     # Affichage du score
+│   │   └── coins.js       # Affichage des coins
 │   ├── systems/
-│   │   ├── audio.js       # Music & sound effects
-│   │   └── input.js       # Input system (WIP)
+│   │   ├── audio.js       # Musique et effets sonores
+│   │   └── input.js       # Système d'entrée (WIP)
 │   └── ui/
-│       ├── renderer.js    # Canvas drawing (arena, pieces, preview)
-│       └── screens.js     # Overlay screens management
+│       ├── renderer.js    # Dessin canvas (arène, pièces, preview)
+│       └── screens.js     # Gestion des écrans overlay
 └── assets/
     ├── audio/
-    │   ├── music/         # Background tracks (.mp3)
-    │   └── sfx/           # Sound effects (.mp3)
+    │   ├── music/         # Musiques de fond (.mp3)
+    │   └── sfx/           # Effets sonores (.mp3)
     └── sprites/
-        ├── character/     # Character illustrations
-        ├── icon/          # UI icons (.svg)
-        └── image_preview_music/ # Music preview images
+        ├── character/     # Illustrations du personnage
+        ├── icon/          # Icônes UI (.svg)
+        └── image_preview_music/ # Images de prévisualisation musique
 ```
 
 ---
 
-## 🚀 How to run
+## 🚀 Lancer le projet
 
-No install required. Just open with a local server (required for ES6 modules) :
+Aucune installation requise. Il suffit d'ouvrir le projet avec un serveur local (obligatoire pour les modules ES6) :
 
 ```bash
-# With VS Code → install Live Server extension and click "Go Live"
-# Or with Node.js :
+# Avec VS Code → installer l'extension Live Server puis cliquer sur "Go Live"
+# Ou avec Node.js :
 npx serve .
 ```
 
-Then open `http://localhost:5500` (or the port shown in your terminal).
+Puis ouvrir `http://localhost:5500` dans le navigateur.
 
-> ⚠️ Opening `index.html` directly as a file (`file://`) will **not** work due to ES6 module restrictions.
+> ⚠️ Ouvrir `index.html` directement en `file://` ne **fonctionnera pas** à cause des restrictions des modules ES6.
 
 ---
 
-## 🎮 Controls
+## 🎮 Contrôles
 
-| Key | Action |
+| Touche | Action |
 |---|---|
-| `←` | Move left |
-| `→` | Move right |
-| `↓` | Soft drop |
-| `Space` | Rotate |
+| `←` | Déplacer à gauche |
+| `→` | Déplacer à droite |
+| `↓` | Descente rapide |
+| `Espace` | Rotation |
 | `E` | Pause |
-| `R` | Reset |
+| `R` | Recommencer |
 
 ---
 
-## 🕹️ Game Modes
+## 🕹️ Modes de jeu
 
 | Mode | Description |
 |---|---|
-| **Classic** | Standard Tetris, clear lines to score |
-| **Sprint** | Coming soon |
-| **Marathon** | Coming soon |
+| **Classique** | Tetris standard, complète des lignes pour marquer des points |
+| **Sprint** | Bientôt disponible |
+| **Marathon** | Bientôt disponible |
 
 ---
 
-## 📈 Progression System
+## 📈 Système de progression
 
-- **Score** : each cleared line gives points, clearing multiple lines at once multiplies the reward
-- **Levels** : score threshold formula → `100 × level^1.20`
-- **Coins** : earned on level up → `level^2.27`
+- **Score** : chaque ligne effacée rapporte des points, effacer plusieurs lignes d'un coup multiplie le gain
+- **Niveaux** : seuil de score → `100 × niveau^1.20`
+- **Coins** : gagnés à chaque montée de niveau → `niveau^2.27`
 
 ---
 
 ## 🔊 Audio
 
-- Background music plays on first user interaction (browser autoplay policy)
-- Mute state is saved in `localStorage` across sessions
+- La musique se lance au premier clic sur la page (politique autoplay des navigateurs)
+- L'état muet est sauvegardé dans `localStorage` entre les sessions
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Stack technique
 
-- Vanilla **JavaScript** (ES6 modules)
-- **HTML5 Canvas** for rendering
-- Pure **CSS** (no framework)
-- No external dependencies
+- **JavaScript** vanilla (modules ES6)
+- **HTML5 Canvas** pour le rendu
+- **CSS** pur (aucun framework)
+- Aucune dépendance externe
 
 ---
 
-## 👤 Author
+## 👤 Auteur
 
-Made by **Thomas Largy**  
+Réalisé par **Thomas Largy**  
 Assets : Freesound · Bootstrap Icons · Svgrepo · Pixabay
